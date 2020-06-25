@@ -2,10 +2,12 @@ import * as WebBrowser from 'expo-web-browser';
 import * as React from 'react';
 import { Image, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
-
 import { MonoText } from '../components/StyledText';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
-export default function HomeScreen() {
+
+export default function HomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
@@ -32,6 +34,9 @@ export default function HomeScreen() {
           <Text style={styles.getStartedText}>
             Change any of the text, save the file, and your app will automatically reload.
           </Text>
+          <TouchableOpacity onPress={() => navigation.navigate('Register')} style={Layout.buttonRegisterDesing}>
+            <Text>Register.</Text>
+          </TouchableOpacity>
         </View>
 
         <View style={styles.helpContainer}>
@@ -52,9 +57,9 @@ export default function HomeScreen() {
   );
 }
 
-HomeScreen.navigationOptions = {
+/*omeScreen.navigationOptions = {
   header: null,
-};
+};*/
 
 function DevelopmentModeNotice() {
   if (__DEV__) {
