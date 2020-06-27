@@ -29,7 +29,7 @@ export default function BottomTabNavigator({ navigation, route }) {
         component={LinksScreen}
         options={{
           title: 'Resources',
-          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-book" />,
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-book"/>,
         }}
       />
     </BottomTab.Navigator>

@@ -2,13 +2,10 @@ import React, { Component } from 'react'
 import { View, Text } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-function PruebaScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Home!</Text>
-    </View>
-  );
-}
+import HomeScreen from './HomeScreen';
+import AccountScreen from './AccountScreen';
+
+import TabBarIcon from '../components/TabBarIcon';
 
 function SettingsScreen() {
   return (
@@ -23,8 +20,25 @@ const Tab = createBottomTabNavigator();
 export default function TapsScreen () {
   return(
     <Tab.Navigator initialRouteName={'Home'}>
-        <Tab.Screen name="Home" component={PruebaScreen} />
-        <Tab.Screen name="Settings" component={SettingsScreen} />
+        <Tab.Screen 
+          name="Home" 
+          component={HomeScreen} 
+          options={{
+            title: 'Home',
+            tabBarIcon: ({ focused }) => <TabBarIcon 
+            focused={focused} 
+            name="ios-folder" />,
+        }}/>
+        <Tab.Screen 
+          name="Account" 
+          component={AccountScreen} 
+          options={{
+            title: 'Account',
+            tabBarIcon: ({ focused }) => <TabBarIcon 
+              focused={focused} 
+              name="ios-contact"
+             />,
+        }}/>
     </Tab.Navigator>
   )
 }  
