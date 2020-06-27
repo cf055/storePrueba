@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
-import { View, Text, StyleSheet, ImageBackground, TextInput, Image, Button, TouchableOpacity  } from 'react-native';
+import { View, Text, ImageBackground, TextInput, Image, TouchableOpacity  } from 'react-native';
 import Layout from '../constants/Layout'
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
-function LoginScreen() {
+export default function LoginScreen({ navigation }) {
   return(
   <ImageBackground source={require('../assets/images/LoginScreen.jpg')} style={Layout.containerLoginDesing}>
     <Image style={{marginTop:50, borderRadius:150}} source={require('../assets/images/Logo.png')} />
@@ -13,16 +15,18 @@ function LoginScreen() {
       <TextInput style={Layout.inputLoginDesing} placeholder={'Contraseña'} />
     </View>
     <View style={{marginTop: 40}}>
-    <TouchableOpacity onPress={() => alert('redireccionar a la pagina home')} style={Layout.buttonLoginDesing}>
+    <TouchableOpacity 
+    onPress={() => alert('redireccionar a la pagina home')} 
+      style={Layout.buttonLoginDesing}>
         <Text>Ingresar</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity onPress={() => alert('redireccionar a la pagina registro')} style={Layout.buttonLoginDesing}>
+      <TouchableOpacity 
+      onPress={() => navigation.navigate('Register')}
+      style={Layout.buttonLoginDesing}>
         <Text>Registrarse</Text>
       </TouchableOpacity>
     </View>
   </ImageBackground>
   )
 }  
-
-export default LoginScreen
