@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { View, Text, StyleSheet, ImageBackground, TextInput, Image, Button, TouchableOpacity  } from 'react-native';
 import Layout from '../constants/Layout'
 
-function RegisterScreen({ navigation }) {
+export default function RegisterScreen({ navigation }) {
   return(
     <View style={Layout.containerRegisterDesing}>
     <View style={{marginTop: 60}}>
@@ -24,5 +24,3 @@ function RegisterScreen({ navigation }) {
     </View>
   )
 }  
-
-export default RegisterScreen

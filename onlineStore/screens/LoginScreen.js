@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { View, Text, ImageBackground, TextInput, Image, TouchableOpacity  } from 'react-native';
 import Layout from '../constants/Layout'
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
 
 export default function LoginScreen({ navigation }) {
   return(
@@ -16,7 +14,7 @@ export default function LoginScreen({ navigation }) {
     </View>
     <View style={{marginTop: 40}}>
     <TouchableOpacity 
-    onPress={() => navigation.navigate('Home')} 
+    onPress={() => navigation.navigate('TapsScreen')} 
       style={Layout.buttonLoginDesing}>
         <Text>Ingresar</Text>
       </TouchableOpacity>
