@@ -1,10 +1,19 @@
-import * as WebBrowser from 'expo-web-browser';
+import React, { Component } from 'react'
+import { View, Text, ImageBackground, Image  } from 'react-native';
+import Layout from '../constants/Layout'
+
+export default function LoadingScreen () {
+  return(
+    <View >
+      <Text style={Layout.textLoginDesing} >CARGANDO</Text>
+    </View>
+  )
+}  
+/*import * as WebBrowser from 'expo-web-browser';
 import * as React from 'react';
 import { Image, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { MonoText } from '../components/StyledText';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
 
 
 export default function HomeScreen({ navigation }) {
@@ -52,13 +61,13 @@ export default function HomeScreen({ navigation }) {
       </View>
     </View>
   );
-}
+}*/
 
 /*omeScreen.navigationOptions = {
   header: null,
 };*/
 
-function DevelopmentModeNotice() {
+/*function DevelopmentModeNotice() {
   if (__DEV__) {
     const learnMoreButton = (
       <Text onPress={handleLearnMorePress} style={styles.helpLinkText}>
@@ -178,4 +187,4 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: '#2e78b7',
   },
-});
+});*/

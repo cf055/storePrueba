@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import LoginScreen from './screens/LoginScreen'
 import RegisterScreen from './screens/registerScreen'
 import HomeScreen from './screens/HomeScreen';
+import LoadingScreen from './screens/LoadingScreen';
+//LoadingScreen 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -27,7 +29,6 @@ import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 import useCachedResources from './hooks/useCachedResources';
 import BottomTabNavigator from './navigation/BottomTabNavigator';
 import LinkingConfiguration from './navigation/LinkingConfiguration';
-import RegisterScreen from './screens/registerScrren';
 
 
 const Stack = createStackNavigator(); 

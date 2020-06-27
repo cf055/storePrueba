@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { View, Text, ImageBackground, TextInput, Image, TouchableOpacity  } from 'react-native';
 import Layout from '../constants/Layout'
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
 
 export default function LoginScreen({ navigation }) {
   return(
