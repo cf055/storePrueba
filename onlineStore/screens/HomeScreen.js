@@ -1,14 +1,16 @@
 import React, { Component } from 'react'
-import { View, Text, ImageBackground, Image  } from 'react-native';
+import { View, Text } from 'react-native';
 import Layout from '../constants/Layout'
 
-export default function LoadingScreen () {
+function HomeScreen() {
   return(
-    <View >
-      <Text style={Layout.textLoginDesing} >CARGANDO</Text>
+    <View style={Layout.containerLoginDesing}>
+      <Text style={Layout.textLoginDesing} >Name</Text>
     </View>
   )
 }  
+
+export default HomeScreen
 /*import * as WebBrowser from 'expo-web-browser';
 import * as React from 'react';
 import { Image, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
