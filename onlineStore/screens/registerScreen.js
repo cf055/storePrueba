@@ -4,7 +4,7 @@ import Layout from '../constants/Layout'
 
 function RegisterScreen({ navigation }) {
   return(
-    <View style={Layout.containerLoginDesing}>
+    <View style={Layout.containerRegisterDesing}>
     <View style={{marginTop: 60}}>
       <Text style={Layout.textLoginDesing} >Name</Text>
       <TextInput style={Layout.inputRegisterDesing} placeholder={'Name'} />
@@ -17,7 +17,7 @@ function RegisterScreen({ navigation }) {
     <TouchableOpacity onPress={() => alert('redireccionar a la pagina home')} style={Layout.buttonRegisterDesing}>
         <Text>Ingresar.</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.navigate('Home')} style={Layout.buttonRegisterDesing}>
+      <TouchableOpacity onPress={() => navigation.navigate('Login')} style={Layout.buttonRegisterDesing}>
         <Text>Registrarse.</Text>
       </TouchableOpacity>
     </View>
