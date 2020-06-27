@@ -22,17 +22,6 @@ export default {
     alignItems: 'center',
     margin: 10,
   },
-  inputRegisterDesing: {
-    padding: 10,
-    backgroundColor: 'white',
-    height: 40,
-    width: 300,
-    borderColor: 'black', 
-    borderWidth: 1,
-    borderRadius: 15,
-    alignItems: 'center',
-    margin: 10,
-  },
   textLoginDesing:{
     fontWeight: "bold",
     color:'black',
@@ -45,19 +34,5 @@ export default {
     borderWidth: 1,
     backgroundColor: '#5664af',
     padding: 10
-  },
-  buttonRegisterDesing: {
-    borderRadius: 10, 
-    margin:10,
-    alignItems: 'center',
-    borderColor: 'black', 
-    borderWidth: 1,
-    backgroundColor: '#5664af',
-    padding: 10
-  },
-  /*window: {
-    width,
-    height,
-  },
-  isSmallDevice: width < 375,*/
+  }
 };

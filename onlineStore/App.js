@@ -1,49 +1,21 @@
-import React, {Component} from 'react';
-import { Text, StyleSheet, View } from 'react-native';
-import RegisterScreen from './screens/registerScreen';
-import HomeScreen from './screens/HomeScreen';
+import React, { Component } from 'react'
+import LoginScreen from './screens/LoginScreen'
+import RegisterScreen from './screens/registerScreen'
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
+const Stack = createStackNavigator(); 
 
-const Stack = createStackNavigator();
-
-class App extends Component{
-  render(){
-    return(
-      /*<NavigationContainer>
-        <Stack.Navigator initialRouteName="Home">
-          <Stack.Screen name="Home" component={HomeScreen} />
-          <Stack.Screen name="Register" component={RegisterScreen} />
-        </Stack.Navigator>
-      </NavigationContainer>*/
-      
-      <RegisterScreen/>
-
-      /*<View>
-      <View style={styles.container}>
-        <Text>Ejemplo</Text>
-      </View>
-      <View style={styles.container}>
-        <Text>Ejemplo</Text>
-      </View>
-      <View style={styles.container}>
-        <Text>Ejemplo.</Text>
-      </View>
-      </View>*/
-    )
-  }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "red",
-    justifyContent: 'center',
-    alignItems: 'center'
-  }
-})
-export default App
+export default function App () {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Login">
+        <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="Register" component={RegisterScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+} 
 
 /*import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -55,7 +27,8 @@ import BottomTabNavigator from './navigation/BottomTabNavigator';
 import LinkingConfiguration from './navigation/LinkingConfiguration';
 import RegisterScreen from './screens/registerScrren';
 
-const Stack = createStackNavigator();
+
+const Stack = createStackNavigator(); 
 
 export default function App(props) {
   const isLoadingComplete = useCachedResources();
@@ -64,6 +37,7 @@ export default function App(props) {
     return null;
   } else {
     return (
+      //OTRA VISTA 
       <View style={styles.container}>
         {Platform.OS === 'ios' && <StatusBar barStyle="dark-content" />}
         <NavigationContainer linking={LinkingConfiguration}>
