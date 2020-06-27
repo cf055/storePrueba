@@ -16,7 +16,7 @@ export default function LoginScreen({ navigation }) {
     </View>
     <View style={{marginTop: 40}}>
     <TouchableOpacity 
-    onPress={() => alert('redireccionar a la pagina home')} 
+    onPress={() => navigation.navigate('Home')} 
       style={Layout.buttonLoginDesing}>
         <Text>Ingresar</Text>
       </TouchableOpacity>

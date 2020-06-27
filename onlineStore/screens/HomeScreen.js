@@ -34,9 +34,6 @@ export default function HomeScreen({ navigation }) {
           <Text style={styles.getStartedText}>
             Change any of the text, save the file, and your app will automatically reload.
           </Text>
-          <TouchableOpacity onPress={() => navigation.navigate('Register')} style={Layout.buttonRegisterDesing}>
-            <Text>Register.</Text>
-          </TouchableOpacity>
         </View>
 
         <View style={styles.helpContainer}>
