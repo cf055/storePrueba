@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, ImageBackground, TextInput, Image, TouchableOpacity  } from 'react-native';
+import { View, Text, ImageBackground, TextInput, Image, TouchableOpacity } from 'react-native';
 import Layout from '../constants/Layout'
 
 export default function LoginScreen({ navigation }) {
@@ -8,7 +8,7 @@ export default function LoginScreen({ navigation }) {
     <Image style={{marginTop:50, borderRadius:150}} source={require('../assets/images/Logo.png')} />
     <View style={{marginTop: 60}}>
       <Text style={Layout.textLoginDesing} >CORREO</Text>
-      <TextInput style={Layout.inputLoginDesing} placeholder={'Correo'} />
+        <TextInput style={Layout.inputLoginDesing} placeholder={'Correo'} />
       <Text style={Layout.textLoginDesing} >CONTRASEÑA</Text>
       <TextInput style={Layout.inputLoginDesing} placeholder={'Contraseña'} />
     </View>
@@ -28,3 +28,4 @@ export default function LoginScreen({ navigation }) {
   </ImageBackground>
   )
 }  
+

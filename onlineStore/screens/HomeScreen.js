@@ -2,15 +2,14 @@ import React, { Component } from 'react'
 import { View, Text } from 'react-native';
 import Layout from '../constants/Layout'
 
-function HomeScreen() {
+export default function HomeScreen() {
   return(
     <View style={Layout.containerLoginDesing}>
-      <Text style={Layout.textLoginDesing} >Name</Text>
+      <Text style={Layout.textLoginDesing} > HOME </Text>
     </View>
   )
 }  
 
-export default HomeScreen
 /*import * as WebBrowser from 'expo-web-browser';
 import * as React from 'react';
 import { Image, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';

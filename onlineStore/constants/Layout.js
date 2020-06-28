@@ -9,14 +9,12 @@ export default {
     flexDirection: 'column',
     alignItems: 'center',
     opacity: 0.5,
-    marginTop: 30,
   },
   containerRegisterDesing: {
     flex: 1,
     flexDirection: 'column',
     alignItems: 'center',
     opacity: 0.5,
-    marginTop: 30,
     backgroundColor: "#95f9de"
   },
   //isSmallDevice: width < 375,
