@@ -7,20 +7,20 @@ export default function LoginScreen({ navigation }) {
   return(
     <SafeAreaView style={Layout.safeArea}>
       <ImageBackground source={require('../assets/images/LoginScreen.jpg')} style={Layout.containerLoginDesing}>
-        <Image style={{marginTop:50, borderRadius:150}} source={require('../assets/images/Logo.png')} />
+        <Image style={{marginTop:50, borderRadius:200, width:160, height:160}} source={require('../assets/images/Logo.png')} />
         
-        <View style={{marginTop: 60}}>
+        <View style={{marginTop: 40}}>
           <Text style={Layout.textLoginDesing} >CORREO</Text>
           
           <View style={{flexDirection:"row"}}>
-            <Zocial style={Layout.iconsDesingLogin} name="email" size={24} />
+            <Zocial style={Layout.iconsDesingLogin} name="email" size={20} />
             <TextInput style={Layout.inputLoginDesing} placeholder={'Correo'} />
           </View>
 
           <Text style={Layout.textLoginDesing} >CONTRASEÑA</Text>
 
           <View style={{flexDirection:"row"}}>
-            <MaterialCommunityIcons style={Layout.iconsDesingLogin} name="textbox-password" size={24} />
+            <MaterialCommunityIcons style={Layout.iconsDesingLogin} name="textbox-password" size={20} />
             <TextInput style={Layout.inputLoginDesing} placeholder={'Contraseña'} />
           </View>
 
