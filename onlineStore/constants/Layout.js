@@ -9,6 +9,7 @@ export default {
     flexDirection: 'column',
     alignItems: 'center',
     opacity: 0.5,
+    justifyContent: 'center',
   },
   containerRegisterDesing: {
     flex: 1,
@@ -63,6 +64,8 @@ export default {
   },
   iconsDesingLogin:{
     marginTop: 15,
+  },
+  safeArea: {
+    flex: 1,
   }
-
 };
