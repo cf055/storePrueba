@@ -61,5 +61,8 @@ export default {
     backgroundColor: '#5664af',
     padding: 10
   },
+  iconsDesingLogin:{
+    marginTop: 15,
+  }
 
 };
