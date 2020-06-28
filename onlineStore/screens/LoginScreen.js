@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, ImageBackground, TextInput, Image, TouchableOpacity, SafeAreaView, StyleSheet} from 'react-native';
+import { View, Text, ImageBackground, TextInput, Image, TouchableOpacity, SafeAreaView} from 'react-native';
 import Layout from '../constants/Layout'
 import { MaterialCommunityIcons, Zocial } from '@expo/vector-icons';
 
