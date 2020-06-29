@@ -4,21 +4,21 @@ import Layout from '../constants/Layout'
 
 export default function RegisterScreen({ navigation }) {
   return(
+
     <View style={Layout.containerRegisterDesing}>
-    <View style={{marginTop: 60}}>
-      <Text style={Layout.textLoginDesing} >Name</Text>
+    <Image style={{marginTop:50, borderRadius:150, width:100, height:100}} source={require('../assets/images/Logo.png')} />
+    <View style={{marginTop: 50}}>
+      <Text style={{fontSize: 25, textAlign: 'center', color:'#4b2fd5', fontWeight: "bold",}}>Registro app.</Text>
+      
       <TextInput style={Layout.inputRegisterDesing} placeholder={'Name'} />
-      <Text style={Layout.textLoginDesing} >Email</Text>
+      
       <TextInput style={Layout.inputRegisterDesing} placeholder={'Correo'} />
-      <Text style={Layout.textLoginDesing} >Password</Text>
+      
       <TextInput style={Layout.inputRegisterDesing} placeholder={'Contraseña'} />
     </View>
-    <View style={{marginTop: 40}}>
-    <TouchableOpacity onPress={() => alert('redireccionar a la pagina home')} style={Layout.buttonRegisterDesing}>
-        <Text>Ingresar.</Text>
-      </TouchableOpacity>
+    <View style={{marginTop: 20}}>
       <TouchableOpacity onPress={() => navigation.navigate('Login')} style={Layout.buttonRegisterDesing}>
-        <Text>Registrarse.</Text>
+        <Text style={{color: "white", fontSize: 15, fontWeight: "bold"}} >Registrarse.</Text>
       </TouchableOpacity>
     </View>
     </View>

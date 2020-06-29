@@ -16,7 +16,7 @@ export default {
     flexDirection: 'column',
     alignItems: 'center',
     opacity: 0.5,
-    backgroundColor: "#95f9de"
+    backgroundColor: "white"
   },
   //isSmallDevice: width < 375,
   inputLoginDesing: {
@@ -33,10 +33,11 @@ export default {
     padding: 10,
     backgroundColor: 'white',
     height: 40,
-    width: 300,
+    width: 250,
     borderColor: 'black', 
     borderWidth: 1,
-    borderRadius: 15,
+    borderRadius: 10,
+    borderColor: "#a2a5a4",
     alignItems: 'center',
     margin: 10,
   },
@@ -57,10 +58,10 @@ export default {
     borderRadius: 10, 
     margin:10,
     alignItems: 'center',
-    borderColor: 'black', 
-    borderWidth: 1,
-    backgroundColor: '#5664af',
-    padding: 10
+    borderColor: 'black',
+    backgroundColor: '#4b2fd5',
+    padding: 10,
+    width: 250
   },
   iconsDesingLogin:{
     marginTop: 15,
