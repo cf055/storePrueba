@@ -55,7 +55,7 @@ export default {
     padding: 10
   },
   buttonRegisterDesing: {
-    borderRadius: 10, 
+    borderRadius: 20, 
     margin:10,
     alignItems: 'center',
     borderColor: 'black',
