@@ -6,7 +6,7 @@ import { AntDesign } from '@expo/vector-icons';
 export default function AccountScreen () {
   return (
     <SafeAreaView style={Layout.safeArea}>
-      <View style={Layout.containerUserDesing}>
+      <View style={{flex:1}}>
         <View style={styles.container2}>
         <View style={{flex: 0.5}}>
           <View style={{flexDirection: 'row', justifyContent: 'center'}}>
@@ -51,15 +51,11 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     
   },
-  /*text: {
-    fontSize: 42,
-  },*/
   container2: {
     flex:1.5, 
     flexDirection: 'column', 
     justifyContent: 'center', 
-    marginHorizontal: 20,
-    backgroundColor: "#5664af"
+    backgroundColor: "#5fb1fa"
 
   }, 
   input2: {
