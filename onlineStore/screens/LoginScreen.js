@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, ImageBackground, TextInput, Image, TouchableOpacity, SafeAreaView} from 'react-native';
+import { View, Text, TextInput, Image, TouchableOpacity, SafeAreaView} from 'react-native';
 import Layout from '../constants/Layout'
 import { MaterialCommunityIcons, Zocial } from '@expo/vector-icons';
 
@@ -14,14 +14,14 @@ export default function LoginScreen({ navigation }) {
           
           <View style={{flexDirection:"row"}}>
             <Zocial style={Layout.iconsDesingLogin} name="email" size={20} />
-            <TextInput style={Layout.inputRegisterDesing} placeholder={'Correo'} />
+            <TextInput style={Layout.inputDesing} placeholder={'Correo'} />
           </View>
 
           <Text style={Layout.textLoginDesing} >CONTRASEÑA</Text>
 
           <View style={{flexDirection:"row"}}>
             <MaterialCommunityIcons style={Layout.iconsDesingLogin} name="textbox-password" size={20} />
-            <TextInput style={Layout.inputRegisterDesing} placeholder={'Contraseña'} />
+            <TextInput style={Layout.inputDesing} placeholder={'Contraseña'} />
           </View>
 
         </View>

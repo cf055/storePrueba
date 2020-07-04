@@ -14,14 +14,14 @@ export default function RegisterScreen({ navigation }) {
       <View style={{flex:3, alignItems: 'stretch'}}>
       <Text style={{fontSize: 25, textAlign: 'center', color:'#5664af', fontWeight: "bold",}}>Registro app.</Text>
       
-      <TextInput style={Layout.inputRegisterDesing} placeholder={'Name'} />
+      <TextInput style={Layout.inputDesing} placeholder={'Name'} />
       
-      <TextInput style={Layout.inputRegisterDesing} placeholder={'Correo'} />
+      <TextInput style={Layout.inputDesing} placeholder={'Correo'} />
       
-      <TextInput style={Layout.inputRegisterDesing} placeholder={'Contraseña'} />
+      <TextInput style={Layout.inputDesing} placeholder={'Contraseña'} />
 
       <TouchableOpacity  onPress={() => navigation.navigate('Login')}  style={Layout.buttonDesing}>
-        <Text style={{color: "white", fontSize: 15, fontWeight: "bold"}} >Registrarse.</Text>
+        <Text style={Layout.textButtonDesing} >Registrarse.</Text>
       </TouchableOpacity>
       </View>
       <View style={{flex:1}}>

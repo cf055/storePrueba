@@ -15,7 +15,7 @@ export default {
     flex: 1,
     backgroundColor: "#5664af"
   },
-  inputRegisterDesing: {
+  inputDesing: {
     padding: 10,
     backgroundColor: 'white',
     height: 50,
@@ -45,4 +45,9 @@ export default {
   safeArea: {
     flex: 1,
   },
+  textButtonDesing:{
+    color: "white", 
+    fontSize: 15, 
+    fontWeight: "bold",
+  }
 };
