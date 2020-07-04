@@ -1,33 +1,81 @@
 import React, { Component } from 'react'
-import { Text, StyleSheet, ScrollView, SafeAreaView  } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, Image, SafeAreaView, TextInput  } from 'react-native';
+import Layout from '../constants/Layout';
+import TabBarIcon from '../components/TabBarIcon';
+import { AntDesign } from '@expo/vector-icons'; 
 
 export default function AccountScreen () {
   return (
-    <SafeAreaView style={styles.container}>
-      <ScrollView style={styles.scrollView}>
-        <Text style={styles.text}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </Text>
-      </ScrollView>
+    <SafeAreaView style={Layout.safeArea}>
+      <View style={Layout.containerUserDesing}>
+        <View style={styles.container2}>
+        <View style={{flex: 0.5}}>
+          <View style={{flexDirection: 'row', justifyContent: 'center'}}>
+          <Text style={{color: "white", fontSize: 20}}>Settings.</Text>
+          </View>
+        </View>
+          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+            <Image style={{borderRadius:150, width:70, height:70, marginHorizontal: 10}} source={require('../assets/images/Logo.png')} />
+            <View style={{flexDirection: 'column', justifyContent: 'center'}}>
+              <Text style={{marginHorizontal: 20, color: "white"}}>NombreUsuario</Text>
+            </View>
+            <View style={{flexDirection: 'column', justifyContent: 'center',  marginHorizontal: 20}}>
+            <AntDesign name="edit" size={24} color="white" />
+            </View>
+          </View>
+        </View>
+        <View style={{flex:3, alignItems: 'stretch'}}>
+          <ScrollView style={styles.scrollView}>
+            <Text style={{marginHorizontal: 20, padding: 10, color:"#5664af"}}>Datos usuario</Text>
+          <View style={{alignItems: 'stretch'}}>
+            <Text style={{color:"#5664af", marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Name</Text>
+            <TextInput style={styles.input2}/>
+            <Text style={{color:"#5664af", marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Email</Text>
+            <TextInput style={styles.input2} />
+            <Text style={{color:"#5664af", marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Password</Text>
+            <TextInput style={styles.input2} />
+            <Text style={{marginHorizontal: 20, padding: 10, color:"#5664af"}}>Datos usuario 2</Text>
+            <Text style={{color:"#5664af", marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Name</Text>
+            <TextInput style={styles.input2}/>
+            <Text style={{color:"#5664af", marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Email</Text>
+            <TextInput style={styles.input2} />
+            <Text style={{color:"#5664af", marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Password</Text>
+            <TextInput style={styles.input2} />
+          </View>
+        </ScrollView>
+        </View>
+        
+      </View>
     </SafeAreaView>
   );
 } 
 
 const styles = StyleSheet.create({
+
   container: {
     flex: 1,
   },
   scrollView: {
-    backgroundColor: 'pink',
-    marginHorizontal: 20,
+    backgroundColor: 'white',
+    
   },
-  text: {
+  /*text: {
     fontSize: 42,
-  },
+  },*/
+  container2: {
+    flex:1.5, 
+    flexDirection: 'column', 
+    justifyContent: 'center', 
+    marginHorizontal: 20,
+    backgroundColor: "#5664af"
+
+  }, 
+  input2: {
+    height: 40,
+    borderWidth: 1,
+    borderColor: "white",
+    borderBottomColor: "#a2a5a4",
+    padding: 10,
+    marginHorizontal: 30
+  }
 });

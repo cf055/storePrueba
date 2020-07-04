@@ -4,7 +4,7 @@ import Layout from '../constants/Layout'
 
 export default function HomeScreen() {
   return(
-    <View style={Layout.containerLoginDesing}>
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text style={Layout.textLoginDesing} > HOME </Text>
     </View>
   )

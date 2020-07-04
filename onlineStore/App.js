@@ -4,6 +4,7 @@ import RegisterScreen from './screens/registerScreen'
 import TapsScreen from './screens/TapsScreen';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import AccountScreen from './screens/AccountScreen'
 
 const Stack = createStackNavigator(); 
 
@@ -13,7 +14,17 @@ export default function App () {
       <Stack.Navigator screenOptions={{headerShown:false}} initialRouteName="Login">
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Register" component={RegisterScreen} />
-        <Stack.Screen name="TapsScreen" component={TapsScreen} />
+        <Stack.Screen 
+        name="TapsScreen" 
+        component={TapsScreen} 
+        options={{
+          title: 'ejemplo',
+          headerStyle: {
+            backgroundColor: '#f4511e',
+          },
+          headerTintColor: '#fff',
+        }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
