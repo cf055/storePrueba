@@ -7,7 +7,7 @@ export default function RegisterScreen({ navigation }) {
   return(
 
   <SafeAreaView style={Layout.safeArea}>
-    <View style={Layout.containerRegisterDesing}>
+    <View style={Layout.containerDesing}>
       <View style={{flex:2, justifyContent: 'center'}}>
         <Image style={{borderRadius:150, alignItems: 'center', width:100, height:100}} source={require('../assets/images/Logo.png')} />
       </View>

@@ -16,9 +16,15 @@ export default {
     alignItems: 'center',
     backgroundColor: "white"
   },
+  containerDesing: {
+    flex: 1,
+    flexDirection: 'column',
+    alignItems: 'center',
+    backgroundColor: "white"
+  },
   containerUserDesing: {
     flex: 1,
-    backgroundColor: "#5664af"
+    backgroundColor: "white"
   },
   //isSmallDevice: width < 375,
   inputLoginDesing: {
