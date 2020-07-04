@@ -14,7 +14,7 @@ export default function AccountScreen () {
           </View>
         </View>
           <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-            <Image style={{borderRadius:150, width:70, height:70, marginHorizontal: 20}} source={require('../assets/images/Logo.png')} />
+            <Image style={{borderRadius:150, width:100, height:100, marginHorizontal: 20}} source={require('../assets/images/Logo.png')} />
             <View style={{flexDirection: 'column', justifyContent: 'center'}}>
               <Text style={{marginHorizontal: 20, color: "white"}}>NombreUsuario</Text>
             </View>
@@ -47,12 +47,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
+  
   scrollView: {
     backgroundColor: 'white',
     
   },
   container2: {
-    flex:1.5, 
+    flex: 1.1, 
     flexDirection: 'column', 
     justifyContent: 'center', 
     backgroundColor: "#5fb1fa"
