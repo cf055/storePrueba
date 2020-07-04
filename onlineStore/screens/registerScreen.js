@@ -20,7 +20,7 @@ export default function RegisterScreen({ navigation }) {
       
       <TextInput style={Layout.inputRegisterDesing} placeholder={'Contraseña'} />
 
-      <TouchableOpacity  onPress={() => navigation.navigate('Login')}  style={Layout.buttonRegisterDesing}>
+      <TouchableOpacity  onPress={() => navigation.navigate('Login')}  style={Layout.buttonDesing}>
         <Text style={{color: "white", fontSize: 15, fontWeight: "bold"}} >Registrarse.</Text>
       </TouchableOpacity>
       </View>

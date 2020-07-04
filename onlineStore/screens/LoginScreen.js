@@ -29,14 +29,14 @@ export default function LoginScreen({ navigation }) {
         <View style={{marginTop: 40}}>
           <TouchableOpacity 
             onPress={() => navigation.navigate('TapsScreen')} 
-            style={Layout.buttonRegisterDesing}>
+            style={Layout.buttonDesing}>
             
             <Text>Ingresar</Text>
           </TouchableOpacity>
 
           <TouchableOpacity 
             onPress={() => navigation.navigate('Register')}
-            style={Layout.buttonRegisterDesing}>
+            style={Layout.buttonDesing}>
             
             <Text>Registrarse</Text>
           </TouchableOpacity>
