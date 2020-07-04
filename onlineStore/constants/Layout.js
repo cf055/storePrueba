@@ -4,18 +4,6 @@ import { Dimensions } from 'react-native';
 //const height = Dimensions.get('window').height;
 
 export default {
-  containerLoginDesing: {
-    flex: 1,
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  containerRegisterDesing: {
-    flex: 1,
-    flexDirection: 'column',
-    alignItems: 'center',
-    backgroundColor: "white"
-  },
   containerDesing: {
     flex: 1,
     flexDirection: 'column',
@@ -24,7 +12,7 @@ export default {
   },
   containerUserDesing: {
     flex: 1,
-    backgroundColor: "white"
+    backgroundColor: "#5664af"
   },
   //isSmallDevice: width < 375,
   inputLoginDesing: {
@@ -33,7 +21,7 @@ export default {
     width: 300,
     borderColor: 'black', 
     borderWidth: 1,
-    borderRadius: 10,
+    borderRadius: 15,
     alignItems: 'center',
     margin: 10,
   },
@@ -52,6 +40,15 @@ export default {
   textLoginDesing:{
     fontWeight: "bold",
     color:'black',
+  },
+  buttonLoginDesing: {
+    borderRadius: 10, 
+    margin:10,
+    alignItems: 'center',
+    borderColor: 'black', 
+    borderWidth: 1,
+    backgroundColor: '#5664af',
+    padding: 10
   },
   buttonDesing: {
     borderRadius: 20, 
