@@ -18,6 +18,10 @@ export default {
     opacity: 0.5,
     backgroundColor: "white"
   },
+  containerUserDesing: {
+    flex: 1,
+    backgroundColor: "#5664af"
+  },
   //isSmallDevice: width < 375,
   inputLoginDesing: {
     backgroundColor: 'white',
@@ -58,8 +62,7 @@ export default {
     borderRadius: 20, 
     margin:10,
     alignItems: 'center',
-    borderColor: 'black',
-    backgroundColor: '#4b2fd5',
+    backgroundColor: '#5664af',
     padding: 10,
     width: 250
   },

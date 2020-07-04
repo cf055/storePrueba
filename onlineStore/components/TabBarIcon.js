@@ -7,7 +7,8 @@ export default function TabBarIcon(props) {
   return (
     <Ionicons
       name={props.name}
-      size={30}
+      size={props.size}
+      color={props.color}
     />
   );
 }
