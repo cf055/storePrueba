@@ -11,10 +11,6 @@ export default {
     justifyContent: 'center',
     backgroundColor: "white"
   },
-  containerUserDesing: {
-    flex: 1,
-    backgroundColor: "#5664af"
-  },
   inputDesing: {
     padding: 10,
     backgroundColor: 'white',

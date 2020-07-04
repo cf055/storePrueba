@@ -8,10 +8,10 @@ export default function HomeScreen() {
       <View style={Layout.containerDesing}>
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
           <TouchableOpacity  onPress={() => navigation.navigate('Login')}  style={Layout.buttonDesing}>
-            <Text style={{color: "white", fontSize: 15, fontWeight: "bold"}} >Historial.</Text>
+            <Text style={Layout.textButtonDesing} >Historial  </Text>
           </TouchableOpacity>
           <TouchableOpacity  onPress={() => navigation.navigate('Login')}  style={Layout.buttonDesing}>
-            <Text style={{color: "white", fontSize: 15, fontWeight: "bold"}} >Scan.</Text>
+            <Text style={Layout.textButtonDesing} >Scan</Text>
           </TouchableOpacity>
         </View>
       </View>
