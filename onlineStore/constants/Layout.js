@@ -8,14 +8,12 @@ export default {
     flex: 1,
     flexDirection: 'column',
     alignItems: 'center',
-    opacity: 0.5,
     justifyContent: 'center',
   },
   containerRegisterDesing: {
     flex: 1,
     flexDirection: 'column',
     alignItems: 'center',
-    opacity: 0.5,
     backgroundColor: "white"
   },
   containerUserDesing: {
@@ -48,15 +46,6 @@ export default {
   textLoginDesing:{
     fontWeight: "bold",
     color:'black',
-  },
-  buttonLoginDesing: {
-    borderRadius: 10, 
-    margin:10,
-    alignItems: 'center',
-    borderColor: 'black', 
-    borderWidth: 1,
-    backgroundColor: '#5664af',
-    padding: 10
   },
   buttonDesing: {
     borderRadius: 20, 
