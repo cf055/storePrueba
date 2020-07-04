@@ -27,7 +27,7 @@ export default {
     width: 300,
     borderColor: 'black', 
     borderWidth: 1,
-    borderRadius: 15,
+    borderRadius: 10,
     alignItems: 'center',
     margin: 10,
   },
