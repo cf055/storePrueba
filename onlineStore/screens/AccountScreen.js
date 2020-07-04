@@ -14,7 +14,7 @@ export default function AccountScreen () {
           </View>
         </View>
           <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-            <Image style={{borderRadius:150, width:70, height:70, marginHorizontal: 10}} source={require('../assets/images/Logo.png')} />
+            <Image style={{borderRadius:150, width:70, height:70, marginHorizontal: 20}} source={require('../assets/images/Logo.png')} />
             <View style={{flexDirection: 'column', justifyContent: 'center'}}>
               <Text style={{marginHorizontal: 20, color: "white"}}>NombreUsuario</Text>
             </View>
