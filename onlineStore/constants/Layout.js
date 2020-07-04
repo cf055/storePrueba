@@ -45,8 +45,4 @@ export default {
   safeArea: {
     flex: 1,
   },
-  containerHomeScreen: {
-    flex: 1,
-    backgroundColor: "white"
-  }
 };
