@@ -62,7 +62,7 @@ export default {
     borderRadius: 20, 
     margin:10,
     alignItems: 'center',
-    backgroundColor: '#505ff0',
+    backgroundColor: '#6f7cf7',
     padding: 10,
     width: 250
   },
