@@ -6,8 +6,8 @@ import { MaterialCommunityIcons, Zocial } from '@expo/vector-icons';
 export default function LoginScreen({ navigation }) {
   return(
     <SafeAreaView style={Layout.safeArea}>
-      <ImageBackground source={require('../assets/images/LoginScreen.jpg')} style={Layout.containerDesing}>
-        <Image style={{marginTop:50, borderRadius:200, width:160, height:160}} source={require('../assets/images/Logo.png')} />
+      <View style={Layout.containerDesing}>
+      <Image style={{marginTop:50, borderRadius:200, width:160, height:160}} source={require('../assets/images/Logo.png')} />
         
         <View style={{marginTop: 40}}>
           <Text style={Layout.textLoginDesing} >CORREO</Text>
@@ -41,7 +41,7 @@ export default function LoginScreen({ navigation }) {
             <Text style={{color: "white", fontSize: 15, fontWeight: "bold"}}>Registrarse</Text>
           </TouchableOpacity>
         </View>
-      </ImageBackground>
+      </View>
     </SafeAreaView>
   )
 }  

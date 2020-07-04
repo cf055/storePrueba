@@ -4,22 +4,11 @@ import { Dimensions } from 'react-native';
 //const height = Dimensions.get('window').height;
 
 export default {
-  containerLoginDesing: {
-    flex: 1,
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  containerRegisterDesing: {
-    flex: 1,
-    flexDirection: 'column',
-    alignItems: 'center',
-    backgroundColor: "white"
-  },
   containerDesing: {
     flex: 1,
     flexDirection: 'column',
     alignItems: 'center',
+    justifyContent: 'center',
     backgroundColor: "white"
   },
   containerUserDesing: {
