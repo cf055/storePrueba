@@ -58,11 +58,11 @@ export default {
     backgroundColor: '#5664af',
     padding: 10
   },
-  buttonRegisterDesing: {
+  buttonDesing: {
     borderRadius: 20, 
     margin:10,
     alignItems: 'center',
-    backgroundColor: '#6f7cf7',
+    backgroundColor: '#5fb1fa',
     padding: 10,
     width: 250
   },
