@@ -29,7 +29,7 @@ export default {
     width: 300,
     borderColor: 'black', 
     borderWidth: 1,
-    borderRadius: 15,
+    borderRadius: 10,
     alignItems: 'center',
     margin: 10,
   },
@@ -44,19 +44,6 @@ export default {
     borderColor: "#a2a5a4",
     alignItems: 'center',
     margin: 10,
-  },
-  textLoginDesing:{
-    fontWeight: "bold",
-    color:'black',
-  },
-  buttonLoginDesing: {
-    borderRadius: 10, 
-    margin:10,
-    alignItems: 'center',
-    borderColor: 'black', 
-    borderWidth: 1,
-    backgroundColor: '#5664af',
-    padding: 10
   },
   buttonDesing: {
     borderRadius: 20, 
