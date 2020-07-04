@@ -13,7 +13,7 @@ export default {
   },
   containerUserDesing: {
     flex: 1,
-    backgroundColor: "white"
+    backgroundColor: "#5664af"
   },
   inputRegisterDesing: {
     padding: 10,
@@ -32,7 +32,7 @@ export default {
     color:'black',
   },
   buttonDesing: {
-    borderRadius: 20, 
+    borderRadius: 15, 
     margin:10,
     alignItems: 'center',
     backgroundColor: '#5fb1fa',
