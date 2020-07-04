@@ -11,7 +11,7 @@ export default function RegisterScreen({ navigation }) {
       <View style={{flex:2, justifyContent: 'center'}}>
         <Image style={{borderRadius:150, alignItems: 'center', width:100, height:100}} source={require('../assets/images/Logo.png')} />
       </View>
-      <View style={{flex:3, alignItems: 'stretch'}}>
+      <View style={{flex:3}}>
       <Text style={{fontSize: 25, textAlign: 'center', color:'#5664af', fontWeight: "bold",}}>Registro app.</Text>
       
       <TextInput style={Layout.inputRegisterDesing} placeholder={'Name'} />
