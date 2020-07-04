@@ -62,7 +62,7 @@ export default {
     borderRadius: 20, 
     margin:10,
     alignItems: 'center',
-    backgroundColor: '#5664af',
+    backgroundColor: '#505ff0',
     padding: 10,
     width: 250
   },
@@ -71,5 +71,9 @@ export default {
   },
   safeArea: {
     flex: 1,
+  },
+  containerHomeScreen: {
+    flex: 1,
+    backgroundColor: "white"
   }
 };

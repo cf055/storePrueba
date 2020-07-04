@@ -1,12 +1,21 @@
 import React, { Component } from 'react'
-import { View, Text } from 'react-native';
+import { View, Text, SafeAreaView, TouchableOpacity } from 'react-native';
 import Layout from '../constants/Layout'
 
 export default function HomeScreen() {
   return(
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text style={Layout.textLoginDesing} > HOME </Text>
-    </View>
+    <SafeAreaView style={Layout.safeArea}>
+      <View style={Layout.containerHomeScreen}>
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+          <TouchableOpacity  onPress={() => navigation.navigate('Login')}  style={Layout.buttonRegisterDesing}>
+            <Text style={{color: "white", fontSize: 15, fontWeight: "bold"}} >Historial.</Text>
+          </TouchableOpacity>
+          <TouchableOpacity  onPress={() => navigation.navigate('Login')}  style={Layout.buttonRegisterDesing}>
+            <Text style={{color: "white", fontSize: 15, fontWeight: "bold"}} >Scan.</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+    </SafeAreaView>
   )
 }  
 
