@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, StyleSheet, ScrollView, Image, SafeAreaView, TextInput, Alert  } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, Image, SafeAreaView, TextInput  } from 'react-native';
 import Layout from '../constants/Layout';
 import { AntDesign } from '@expo/vector-icons'; 
 
@@ -19,7 +19,7 @@ export default function AccountScreen () {
               <Text style={{marginHorizontal: 20, color: "white"}}>NombreUsuario</Text>
             </View>
             <View style={{flexDirection: 'column', justifyContent: 'center',  marginHorizontal: 20}}>
-            <AntDesign onPress={() => console.log('Ask me later pressed')} name="edit" size={24} color="white" />
+            <AntDesign onPress={() => console.log('Ask me later')} name="edit" size={24} color="white" />
             </View>
           </View>
         </View>
