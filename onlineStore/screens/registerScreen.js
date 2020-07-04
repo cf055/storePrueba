@@ -9,7 +9,7 @@ export default function RegisterScreen({ navigation }) {
   <SafeAreaView style={Layout.safeArea}>
     <View style={Layout.containerDesing}>
       <Image style={{marginTop:10, borderRadius:200, width:160, height:160}} source={require('../assets/images/Logo.png')} />
-      <Text style={{fontSize: 25, textAlign: 'center', color:'#5664af', fontWeight: "bold",}}>Registro app.</Text>
+      <Text style={{fontSize: 25, textAlign: 'center', fontWeight: "bold",}}>Registro app.</Text>
       <TextInput style={Layout.inputDesing} placeholder={'Name'} />
       <TextInput style={Layout.inputDesing} placeholder={'Correo'} />
       <TextInput style={Layout.inputDesing} placeholder={'Contraseña'} />
