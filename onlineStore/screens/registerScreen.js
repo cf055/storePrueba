@@ -29,4 +29,4 @@ export default function RegisterScreen({ navigation }) {
     </View>
   </SafeAreaView>
   )
-}  
+} 

@@ -56,7 +56,6 @@ const styles = StyleSheet.create({
     flexDirection: 'column', 
     justifyContent: 'center', 
     backgroundColor: "#5fb1fa"
-
   }, 
   input2: {
     height: 40,
