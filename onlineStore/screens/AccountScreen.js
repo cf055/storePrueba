@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-import { View, Text, StyleSheet, ScrollView, Image, SafeAreaView, TextInput  } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, Image, SafeAreaView, TextInput, Alert  } from 'react-native';
 import Layout from '../constants/Layout';
-import TabBarIcon from '../components/TabBarIcon';
 import { AntDesign } from '@expo/vector-icons'; 
 
 export default function AccountScreen () {
@@ -20,26 +19,19 @@ export default function AccountScreen () {
               <Text style={{marginHorizontal: 20, color: "white"}}>NombreUsuario</Text>
             </View>
             <View style={{flexDirection: 'column', justifyContent: 'center',  marginHorizontal: 20}}>
-            <AntDesign name="edit" size={24} color="white" />
+            <AntDesign onPress={() => console.log('Ask me later pressed')} name="edit" size={24} color="white" />
             </View>
           </View>
         </View>
         <View style={{flex:3, alignItems: 'stretch'}}>
           <ScrollView style={styles.scrollView}>
-            <Text style={{marginHorizontal: 20, padding: 10, color:"#5664af"}}>Datos usuario</Text>
+            <Text style={{marginHorizontal: 20, padding: 10}}>Datos usuario</Text>
           <View style={{alignItems: 'stretch'}}>
-            <Text style={{color:"#5664af", marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Name</Text>
+            <Text style={{color:"#5664af", marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Numero de cedula</Text>
             <TextInput style={styles.input2}/>
-            <Text style={{color:"#5664af", marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Email</Text>
+            <Text style={{color:"#5664af", marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Numero MAC</Text>
             <TextInput style={styles.input2} />
-            <Text style={{color:"#5664af", marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Password</Text>
-            <TextInput style={styles.input2} />
-            <Text style={{marginHorizontal: 20, padding: 10, color:"#5664af"}}>Datos usuario 2</Text>
-            <Text style={{color:"#5664af", marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Name</Text>
-            <TextInput style={styles.input2}/>
-            <Text style={{color:"#5664af", marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Email</Text>
-            <TextInput style={styles.input2} />
-            <Text style={{color:"#5664af", marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Password</Text>
+            <Text style={{color:"#5664af", marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Correo</Text>
             <TextInput style={styles.input2} />
           </View>
         </ScrollView>
