@@ -1,6 +1,7 @@
 //import { Dimensions } from 'react-native';
 //const width = Dimensions.get('window').width;
 //const height = Dimensions.get('window').height;
+import Color from './Colors'
 
 export default {
   containerDesing: {
@@ -30,7 +31,7 @@ export default {
     borderRadius: 15, 
     margin:10,
     alignItems: 'center',
-    backgroundColor: '#5fb1fa',
+    backgroundColor: Color.principalColor,
     padding: 10,
     width: 250
   },
@@ -49,6 +50,6 @@ export default {
     flex: 0.5, 
     justifyContent: 'center', 
     alignItems: 'center',
-    backgroundColor: "#5fb1fa"
+    backgroundColor: Color.principalColor,
   }
 };

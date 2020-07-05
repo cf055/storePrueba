@@ -10,7 +10,7 @@ export default function AccountScreen () {
         <View style={styles.container2}>
         <View style={{flex: 0.5}}>
           <View style={{flexDirection: 'row', justifyContent: 'center'}}>
-          <Text style={{color: "white", fontSize: 20}}>Settings.</Text>
+          <Text style={{color: "white", fontSize: 30}}>Settings.</Text>
           </View>
         </View>
           <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
