@@ -29,7 +29,7 @@ export default function AccountScreen () {
         </View>
         <View style={{flex:3, alignItems: 'stretch'}}>
           <ScrollView style={styles.scrollView}>
-            <Text style={{marginHorizontal: 20, padding: 10, fontWeight: "bold"}}>Datos usuario</Text>
+            <Text style={{marginHorizontal: 20, padding: 10}}>Datos usuario</Text>
           <View style={{alignItems: 'stretch'}}>
             <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Numero de cedula</Text>
             <TextInput editable={showInput} style={styles.input2}/>
@@ -38,7 +38,7 @@ export default function AccountScreen () {
             <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Correo</Text>
             <TextInput editable={showInput} style={styles.input2} />
             <TouchableOpacity  onPress={() => setShowInput(false)}  style={Layout.buttonDesing}>
-        <Text style={Layout.textButtonDesing} >Guardar.</Text>
+            <Text style={Layout.textButtonDesing} >Guardar.</Text>
       </TouchableOpacity>
           </View>
         </ScrollView>
@@ -62,12 +62,14 @@ const styles = StyleSheet.create({
   
   scrollView: {
     backgroundColor: 'white',
+    
   },
   container2: {
     flex: 1.1, 
     flexDirection: 'column', 
     justifyContent: 'center', 
     backgroundColor: "#5fb1fa"
+
   }, 
   input2: {
     height: 40,
