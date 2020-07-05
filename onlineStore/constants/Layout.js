@@ -1,5 +1,4 @@
-import { Dimensions } from 'react-native';
-
+//import { Dimensions } from 'react-native';
 //const width = Dimensions.get('window').width;
 //const height = Dimensions.get('window').height;
 
@@ -45,5 +44,11 @@ export default {
     color: "white", 
     fontSize: 15, 
     fontWeight: "bold",
+  },
+  viewTitle:{
+    flex: 0.5, 
+    justifyContent: 'center', 
+    alignItems: 'center',
+    backgroundColor: "#5fb1fa"
   }
 };

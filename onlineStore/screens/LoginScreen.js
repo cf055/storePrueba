@@ -2,10 +2,12 @@ import React, { Component } from 'react'
 import { View, Text, TextInput, Image, TouchableOpacity, SafeAreaView} from 'react-native';
 import Layout from '../constants/Layout'
 import { MaterialCommunityIcons, Zocial } from '@expo/vector-icons';
+import { useSafeArea } from 'react-native-safe-area-context';
 
 export default function LoginScreen({ navigation }) {
+  const insets = useSafeArea();
   return(
-    <SafeAreaView style={Layout.safeArea}>
+    <SafeAreaView style={{paddingTop: insets.top, paddingBottom: insets.bottom, flex: 1}}>
       <View style={Layout.containerDesing}>
       <Image style={{marginTop:50, borderRadius:200, width:160, height:160}} source={require('../assets/images/Logo.png')} />
         

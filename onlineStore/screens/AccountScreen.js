@@ -49,7 +49,6 @@ const styles = StyleSheet.create({
   },
   scrollView: {
     backgroundColor: 'white',
-    
   },
   container2: {
     flex:1.5, 
