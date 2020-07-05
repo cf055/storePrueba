@@ -1,9 +1,36 @@
-import React, { Component } from 'react'
-import { View, Text, StyleSheet, ScrollView, SafeAreaView, TextInput, TouchableOpacity, Icon } from 'react-native';
+import React, { useState, useEffect } from 'react'
+import { View, Text, ScrollView, SafeAreaView, TextInput, TouchableOpacity } from 'react-native';
 import Layout from '../constants/Layout';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-export default function AddReadingScreen () {
+import * as Location from 'expo-location';
+
+export default function AddReadingScreen () {  
+  const [location, setLocation] = useState(null);
+  const [errorMsg, setErrorMsg] = useState(null);
+
+  useEffect(() => {
+    (async () => {
+      let { status } = await Location.requestPermissionsAsync();
+      if (status !== 'granted') {
+        setErrorMsg('Permission to access location was denied');
+      }
+
+      //.timestamp para hora
+      let location = await (await Location.getCurrentPositionAsync({})).coords;
+      setLocation(location);
+    })();
+  });
+
+  let coords = 'Waiting..';
+
+  if (errorMsg) {
+    coords = errorMsg;
+  } else if (location) {
+    coords = JSON.stringify(location.latitude + ' / ' + location.longitude);
+  }
+
+
   return (
     <SafeAreaView style={Layout.safeArea}>
       <View style={{flex: 1}}>
@@ -18,6 +45,7 @@ export default function AddReadingScreen () {
             <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Id Medidor</Text>
             <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Fecha - Hora</Text>
             <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Localizacion</Text>
+            <Text>{coords}</Text>
             <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Mac</Text>
 
             <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Medida</Text>
