@@ -1,9 +1,13 @@
-import React, { Component } from 'react'
-import { View, Text, StyleSheet, ScrollView, Image, SafeAreaView, TextInput  } from 'react-native';
+import React, { Component, UseState, useState } from 'react'
+import { View, Text, StyleSheet, ScrollView, Image, SafeAreaView, TextInput, TouchableOpacity  } from 'react-native';
 import Layout from '../constants/Layout';
 import { AntDesign } from '@expo/vector-icons'; 
 
 export default function AccountScreen () {
+
+  
+  const[showInput, setShowInput] = useState(false);
+
   return (
     <SafeAreaView style={Layout.safeArea}>
       <View style={{flex:1}}>
@@ -19,7 +23,7 @@ export default function AccountScreen () {
               <Text style={{marginHorizontal: 20, color: "white"}}>NombreUsuario</Text>
             </View>
             <View style={{flexDirection: 'column', justifyContent: 'center',  marginHorizontal: 20}}>
-            <AntDesign onPress={() => console.log('Ask me later')} name="edit" size={24} color="white" />
+            <AntDesign onPress={() => setShowInput(true)} name="edit" size={24} color="white" />
             </View>
           </View>
         </View>
@@ -27,12 +31,15 @@ export default function AccountScreen () {
           <ScrollView style={styles.scrollView}>
             <Text style={{marginHorizontal: 20, padding: 10}}>Datos usuario</Text>
           <View style={{alignItems: 'stretch'}}>
-            <Text style={{color:"#5664af", marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Numero de cedula</Text>
-            <TextInput style={styles.input2}/>
-            <Text style={{color:"#5664af", marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Numero MAC</Text>
-            <TextInput style={styles.input2} />
-            <Text style={{color:"#5664af", marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Correo</Text>
-            <TextInput style={styles.input2} />
+            <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Numero de cedula</Text>
+            <TextInput editable={showInput} style={styles.input2}/>
+            <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Numero MAC</Text>
+            <TextInput editable={showInput} style={styles.input2} />
+            <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Correo</Text>
+            <TextInput editable={showInput} style={styles.input2} />
+            <TouchableOpacity  onPress={() => setShowInput(false)}  style={Layout.buttonDesing}>
+        <Text style={Layout.textButtonDesing} >Guardar.</Text>
+      </TouchableOpacity>
           </View>
         </ScrollView>
         </View>
@@ -40,6 +47,11 @@ export default function AccountScreen () {
       </View>
     </SafeAreaView>
   );
+  /*const stateButton = true;
+  function activateButton(){
+    //const stateButton = true;
+    console.log("Prueba boton.");
+  } */
 } 
 
 const styles = StyleSheet.create({
