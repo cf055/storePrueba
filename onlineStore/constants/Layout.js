@@ -47,5 +47,13 @@ export default {
     justifyContent: 'center', 
     alignItems: 'center',
     backgroundColor: Color.principalColor,
+  },
+  floatButton:{
+    alignItems:'center',
+    justifyContent:'center',
+    width:70,    
+    height:70,
+    backgroundColor: Color.principalColor,
+    borderRadius:100,
   }
 };

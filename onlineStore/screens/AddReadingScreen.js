@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { View, Text, StyleSheet, ScrollView, SafeAreaView, TextInput } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, SafeAreaView, TextInput, TouchableOpacity, Icon } from 'react-native';
 import Layout from '../constants/Layout';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 export default function AddReadingScreen () {
   return (
@@ -12,8 +13,8 @@ export default function AddReadingScreen () {
           </View>
         </View>
 
-        <View style={{flex:3, alignItems: 'stretch'}}>
-          <ScrollView style={{backgroundColor:'white'}}>
+        <View style={{flex:3, backgroundColor:'white'}}>
+          <ScrollView>
             <Text style={{color:"#5664af", marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Id Medidor</Text>
             <Text style={{color:"#5664af", marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Fecha - Hora</Text>
             <Text style={{color:"#5664af", marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Localizacion</Text>
@@ -25,8 +26,31 @@ export default function AddReadingScreen () {
             <TextInput style={styles.input2} />
             <Text style={{color:"#5664af", marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Observacion</Text>
             <TextInput style={styles.input2} />
+            <TextInput style={styles.input2} />
+            <TextInput style={styles.input2} />
+            <TextInput style={styles.input2} />
+            <TextInput style={styles.input2} />
+            <TextInput style={styles.input2} />
+            <TextInput style={styles.input2} />
+            <TextInput style={styles.input2} />
+            <TextInput style={styles.input2} />
+            <TextInput style={styles.input2} />
+            <TextInput style={styles.input2} />
+            <TextInput style={styles.input2} />
+            <TextInput style={styles.input2} />
+            <TextInput style={styles.input2} />
+
           </ScrollView>
+
+          <View style={{alignItems:'flex-end', bottom:30, right:30}}>
+              <TouchableOpacity
+                style={Layout.floatButton}>
+                <MaterialCommunityIcons onPress={() => console.log('scanea aqui')} name="qrcode-scan" size={50} color="white" />
+              </TouchableOpacity>
+            </View>
+
         </View>
+
       </View>
     </SafeAreaView>
   );
