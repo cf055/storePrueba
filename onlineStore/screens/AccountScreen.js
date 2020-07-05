@@ -14,7 +14,7 @@ export default function AccountScreen () {
         <View style={styles.container2}>
         <View style={{flex: 0.5}}>
           <View style={{flexDirection: 'row', justifyContent: 'center'}}>
-          <Text style={{color: "white", fontSize: 30}}>Settings.</Text>
+          <Text style={{color: "white", fontSize: 20}}>Settings.</Text>
           </View>
         </View>
           <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
@@ -23,42 +23,34 @@ export default function AccountScreen () {
               <Text style={{marginHorizontal: 20, color: "white"}}>NombreUsuario</Text>
             </View>
             <View style={{flexDirection: 'column', justifyContent: 'center',  marginHorizontal: 20}}>
-            <AntDesign onPress={() => setShowInput(true)} name="edit" size={24} color="white" />
+            <AntDesign onPress={() => setShowInput(true)} name="edit" size={30} color="white" />
             </View>
           </View>
         </View>
-        <View style={{flex:3, alignItems: 'stretch'}}>
+        <View style={{flex:3, alignItems: 'stretch', backgroundColor: 'white' }}>
           <ScrollView style={styles.scrollView}>
             <Text style={{marginHorizontal: 20, padding: 10}}>Datos usuario</Text>
           <View style={{alignItems: 'stretch'}}>
             <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Numero de cedula</Text>
-            <TextInput editable={showInput} style={styles.input2}/>
+            <TextInput editable={showInput} style={Layout.inputWithoutBorder}/>
             <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Numero MAC</Text>
-            <TextInput editable={showInput} style={styles.input2} />
+            <TextInput editable={showInput} style={Layout.inputWithoutBorder} />
             <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Correo</Text>
-            <TextInput editable={showInput} style={styles.input2} />
-            <TouchableOpacity  onPress={() => setShowInput(false)}  style={Layout.buttonDesing}>
-            <Text style={Layout.textButtonDesing} >Guardar.</Text>
-      </TouchableOpacity>
+            <TextInput editable={showInput} style={Layout.inputWithoutBorder} />
+          </View>
+          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+          <TouchableOpacity  onPress={() => setShowInput(false)}  style={Layout.buttonDesing}>
+            <Text style={Layout.textButtonDesing} >Guardar</Text>
+          </TouchableOpacity>
           </View>
         </ScrollView>
         </View>
-        
       </View>
     </SafeAreaView>
   );
-  /*const stateButton = true;
-  function activateButton(){
-    //const stateButton = true;
-    console.log("Prueba boton.");
-  } */
 } 
 
 const styles = StyleSheet.create({
-
-  container: {
-    flex: 1,
-  },
   
   scrollView: {
     backgroundColor: 'white',
@@ -69,14 +61,5 @@ const styles = StyleSheet.create({
     flexDirection: 'column', 
     justifyContent: 'center', 
     backgroundColor: "#5fb1fa"
-
-  }, 
-  input2: {
-    height: 40,
-    borderWidth: 1,
-    borderColor: "white",
-    borderBottomColor: "#a2a5a4",
-    padding: 10,
-    marginHorizontal: 30
   }
 });

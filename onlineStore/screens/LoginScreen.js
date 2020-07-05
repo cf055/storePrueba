@@ -16,14 +16,14 @@ export default function LoginScreen({ navigation }) {
           
           <View style={{flexDirection:"row"}}>
             <Zocial style={Layout.iconsDesingLogin} name="email" size={20} />
-            <TextInput style={Layout.inputDesing} placeholder={'Correo'} />
+            <TextInput style={Layout.inputBorderDesing} placeholder={'Correo'} />
           </View>
 
           <Text style={{fontWeight: "bold",}} >CONTRASEÑA</Text>
 
           <View style={{flexDirection:"row"}}>
             <MaterialCommunityIcons style={Layout.iconsDesingLogin} name="textbox-password" size={20} />
-            <TextInput style={Layout.inputDesing} placeholder={'Contraseña'} />
+            <TextInput style={Layout.inputBorderDesing} placeholder={'Contraseña'} />
           </View>
 
         </View>

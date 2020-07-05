@@ -11,7 +11,7 @@ export default {
     justifyContent: 'center',
     backgroundColor: "white"
   },
-  inputDesing: {
+  inputBorderDesing: {
     padding: 10,
     backgroundColor: 'white',
     height: 50,
@@ -55,5 +55,13 @@ export default {
     height:70,
     backgroundColor: Color.principalColor,
     borderRadius:100,
+  },
+  inputWithoutBorder:{
+    height: 40,
+    borderWidth: 1,
+    borderColor: "white",
+    borderBottomColor: Color.principalColor,
+    padding: 10,
+    marginHorizontal: 30    
   }
 };
