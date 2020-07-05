@@ -1,7 +1,7 @@
-import { Dimensions } from 'react-native';
-
+//import { Dimensions } from 'react-native';
 //const width = Dimensions.get('window').width;
 //const height = Dimensions.get('window').height;
+import Color from './Colors'
 
 export default {
   containerDesing: {
@@ -23,15 +23,11 @@ export default {
     alignItems: 'center',
     margin: 10,
   },
-  textLoginDesing:{
-    fontWeight: "bold",
-    color:'black',
-  },
   buttonDesing: {
     borderRadius: 15, 
     margin:10,
     alignItems: 'center',
-    backgroundColor: '#5fb1fa',
+    backgroundColor: Color.principalColor,
     padding: 10,
     width: 250
   },
@@ -45,5 +41,19 @@ export default {
     color: "white", 
     fontSize: 15, 
     fontWeight: "bold",
+  },
+  viewTitle:{
+    flex: 0.5, 
+    justifyContent: 'center', 
+    alignItems: 'center',
+    backgroundColor: Color.principalColor,
+  },
+  floatButton:{
+    alignItems:'center',
+    justifyContent:'center',
+    width:70,    
+    height:70,
+    backgroundColor: Color.principalColor,
+    borderRadius:100,
   }
 };
