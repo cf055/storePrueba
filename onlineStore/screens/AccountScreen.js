@@ -25,7 +25,7 @@ export default function AccountScreen () {
         </View>
         <View style={{flex:3, alignItems: 'stretch'}}>
           <ScrollView style={styles.scrollView}>
-            <Text style={{marginHorizontal: 20, padding: 10}}>Datos usuario</Text>
+            <Text style={{marginHorizontal: 20, padding: 10, fontWeight: "bold"}}>Datos usuario</Text>
           <View style={{alignItems: 'stretch'}}>
             <Text style={{color:"#5664af", marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Numero de cedula</Text>
             <TextInput style={styles.input2}/>

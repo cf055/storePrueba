@@ -12,14 +12,14 @@ export default function LoginScreen({ navigation }) {
       <Image style={{marginTop:50, borderRadius:200, width:160, height:160}} source={require('../assets/images/Logo.png')} />
         
         <View style={{marginTop: 40}}>
-          <Text style={Layout.textLoginDesing} >CORREO</Text>
+          <Text style={{fontWeight: "bold"}} >CORREO</Text>
           
           <View style={{flexDirection:"row"}}>
             <Zocial style={Layout.iconsDesingLogin} name="email" size={20} />
             <TextInput style={Layout.inputDesing} placeholder={'Correo'} />
           </View>
 
-          <Text style={Layout.textLoginDesing} >CONTRASEÑA</Text>
+          <Text style={{fontWeight: "bold",}} >CONTRASEÑA</Text>
 
           <View style={{flexDirection:"row"}}>
             <MaterialCommunityIcons style={Layout.iconsDesingLogin} name="textbox-password" size={20} />

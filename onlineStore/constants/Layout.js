@@ -23,10 +23,6 @@ export default {
     alignItems: 'center',
     margin: 10,
   },
-  textLoginDesing:{
-    fontWeight: "bold",
-    color:'black',
-  },
   buttonDesing: {
     borderRadius: 15, 
     margin:10,
