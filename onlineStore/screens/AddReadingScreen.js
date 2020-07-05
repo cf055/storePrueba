@@ -21,11 +21,11 @@ export default function AddReadingScreen () {
             <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Mac</Text>
 
             <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Medida</Text>
-            <TextInput placeholder='Ingrese medidia' style={styles.input2} />
+            <TextInput placeholder='Ingrese medidia' style={Layout.inputWithoutBorder} />
             <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Comentario</Text>
-            <TextInput placeholder='Ingrese comentario' style={styles.input2} />
+            <TextInput placeholder='Ingrese comentario' style={Layout.inputWithoutBorder} />
             <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Observacion</Text>
-            <TextInput placeholder='Ingrese observacion' style={styles.input2} />
+            <TextInput placeholder='Ingrese observacion' style={Layout.inputWithoutBorder} />
 
           </ScrollView>
 
@@ -42,14 +42,3 @@ export default function AddReadingScreen () {
     </SafeAreaView>
   );
 } 
-
-const styles = StyleSheet.create({ 
-  input2: {
-    height: 40,
-    borderWidth: 1,
-    borderColor: "white",
-    borderBottomColor: "green",
-    padding: 10,
-    marginHorizontal: 30
-  }
-});
