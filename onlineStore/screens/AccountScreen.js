@@ -7,6 +7,7 @@ export default function AccountScreen () {
 
   
   const[showInput, setShowInput] = useState(false);
+  
 
   return (
     <SafeAreaView style={Layout.safeArea}>
@@ -32,11 +33,11 @@ export default function AccountScreen () {
             <Text style={{marginHorizontal: 20, padding: 10}}>Datos usuario</Text>
           <View style={{alignItems: 'stretch'}}>
             <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Numero de cedula</Text>
-            <TextInput editable={showInput} style={Layout.inputWithoutBorder}/>
+            <TextInput editable={showInput} style={[Layout.inputWithoutBorder,{borderBottomColor: showInput ? 'blue':'red'}]}/>
             <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Numero MAC</Text>
-            <TextInput editable={showInput} style={Layout.inputWithoutBorder} />
+            <TextInput editable={showInput} style={[Layout.inputWithoutBorder,{borderBottomColor: showInput ? 'blue':'red'}]} />
             <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Correo</Text>
-            <TextInput editable={showInput} style={Layout.inputWithoutBorder} />
+            <TextInput editable={showInput} style={[Layout.inputWithoutBorder,{borderBottomColor: showInput ? 'blue':'red'}]} />
           </View>
           <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
           <TouchableOpacity  onPress={() => setShowInput(false)}  style={Layout.buttonDesing}>
