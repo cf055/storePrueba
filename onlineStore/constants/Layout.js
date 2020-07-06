@@ -60,7 +60,7 @@ export default {
     height: 40,
     borderWidth: 1,
     borderColor: "white",
-    borderBottomColor: Color.principalColor,
+    
     padding: 10,
     marginHorizontal: 30    
   }
