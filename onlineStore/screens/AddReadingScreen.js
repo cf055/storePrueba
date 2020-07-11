@@ -25,7 +25,6 @@ export default function AddReadingScreen () {
   
   // localizacion
   let coords = 'Waiting..';
-  let timeText = 'Waiting..';
   
   // fecha y hora
   var date = new Date().getDate();
@@ -40,9 +39,9 @@ export default function AddReadingScreen () {
     coords = errorMsg;
   } else if (location) {
     coords = location.latitude + ' / ' + location.longitude;
-    timeText = date + '/' +  month + '/' + year + ' ' + hours + ':' + min + ':' + sec;
   }
 
+  let timeText = date + '/' +  month + '/' + year + ' ' + hours + ':' + min + ':' + sec;
 
   return (
     <SafeAreaView style={Layout.safeArea}>
