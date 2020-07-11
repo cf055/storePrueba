@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react' // localizacion
 import { View, Text, ScrollView, SafeAreaView, TextInput, TouchableOpacity } from 'react-native';
 import Layout from '../constants/Layout';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-import * as Location from 'expo-location';
+import * as Location from 'expo-location'; // localizacion
 
 export default function AddReadingScreen () {  
-  const [location, setLocation] = useState(null);
-  const [errorMsg, setErrorMsg] = useState(null);
+  const [location, setLocation] = useState(null); // localizacion
+  const [errorMsg, setErrorMsg] = useState(null); // localizacion
 
+  // localizacion todo esto
   useEffect(() => {
     (async () => {
       let { status } = await Location.requestPermissionsAsync();
@@ -21,9 +22,11 @@ export default function AddReadingScreen () {
       setLocation(location);
     })();
   });
-
+  
+  // localizacion
   let coords = 'Waiting..';
 
+  // localizacion devolver if
   if (errorMsg) {
     coords = errorMsg;
   } else if (location) {
