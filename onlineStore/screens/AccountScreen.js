@@ -4,11 +4,15 @@ import Layout from '../constants/Layout';
 import { AntDesign } from '@expo/vector-icons'; 
 
 export default function AccountScreen () {
+  return (
+    <ActivateButton/>
+  );
+} 
 
-  
+function ActivateButton(){
+
   const[showInput, setShowInput] = useState(false);
-  
-
+  const textEjemplo = 'Ejemplo text.';
   return (
     <SafeAreaView style={Layout.safeArea}>
       <View style={{flex:1}}>
@@ -36,7 +40,7 @@ export default function AccountScreen () {
             <TextInput editable={showInput} style={[Layout.inputWithoutBorder,{borderBottomColor: showInput ? 'blue':'red'}]}/>
             <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Numero MAC</Text>
             <TextInput editable={showInput} style={[Layout.inputWithoutBorder,{borderBottomColor: showInput ? 'blue':'red'}]} />
-            <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Correo</Text>
+            <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>{textEjemplo}</Text>
             <TextInput editable={showInput} style={[Layout.inputWithoutBorder,{borderBottomColor: showInput ? 'blue':'red'}]} />
           </View>
           <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -49,7 +53,7 @@ export default function AccountScreen () {
       </View>
     </SafeAreaView>
   );
-} 
+}
 
 const styles = StyleSheet.create({
   
