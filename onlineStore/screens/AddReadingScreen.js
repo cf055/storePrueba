@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react' // localizacion
 import { View, Text, ScrollView, SafeAreaView, TextInput, TouchableOpacity } from 'react-native';
 import Layout from '../constants/Layout';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-
 import * as Location from 'expo-location'; // localizacion
+
+import { BarCodeScanner } from 'expo-barcode-scanner';
 
 export default function AddReadingScreen () {  
   const [location, setLocation] = useState(null); // localizacion
