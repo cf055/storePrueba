@@ -7,10 +7,11 @@ import * as Location from 'expo-location'; // localizacion
 
 
 function localizacionEjemplo(){
-  async () => {
-    const [location, setLocation] = useState(null); // localizacion
+  const [location, setLocation] = useState(null); // localizacion
   const [errorMsg, setErrorMsg] = useState(null); // localizacion
   const [time, setTime] = useState(null); // localizacion
+  
+  async () => {
   let { status } = await Location.requestPermissionsAsync();
     if (status !== 'granted') {
       setErrorMsg('Permission to access location was denied');
