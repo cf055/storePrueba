@@ -37,7 +37,6 @@ export default function AddReadingScreen () {
   } else if (location) {
     coords = JSON.stringify(location.latitude + ' / ' + location.longitude);
     timeText = JSON.stringify(time);
-     console.log(time);
   }
 
 
