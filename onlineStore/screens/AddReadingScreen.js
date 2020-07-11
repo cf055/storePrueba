@@ -26,7 +26,8 @@ export default function AddReadingScreen () {
   // localizacion
   let coords = 'Waiting..';
   let timeText = 'Waiting..';
-
+  
+  // fecha y hora
   var date = new Date().getDate();
   var month = new Date().getMonth() + 1; 
   var year = new Date().getFullYear();
