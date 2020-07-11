@@ -8,6 +8,7 @@ import * as Location from 'expo-location'; // localizacion
 export default function AddReadingScreen () {  
   const [location, setLocation] = useState(null); // localizacion
   const [errorMsg, setErrorMsg] = useState(null); // localizacion
+  const [time, setTime] = useState(null); // localizacion
 
   // localizacion todo esto
   useEffect(() => {
@@ -20,17 +21,23 @@ export default function AddReadingScreen () {
       //.timestamp para hora
       let location = await (await Location.getCurrentPositionAsync({})).coords;
       setLocation(location);
+      let time = await ( await Location.getCurrentPositionAsync({})).timestamp;
+      setTime(time);
     })();
   });
   
   // localizacion
   let coords = 'Waiting..';
+  let timeText = 'Waiting..';
 
   // localizacion devolver if
   if (errorMsg) {
     coords = errorMsg;
+    timeText = errorMsg;
   } else if (location) {
     coords = JSON.stringify(location.latitude + ' / ' + location.longitude);
+    timeText = JSON.stringify(time);
+     console.log(time);
   }
 
 
@@ -47,6 +54,7 @@ export default function AddReadingScreen () {
           <ScrollView>
             <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Id Medidor</Text>
             <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Fecha - Hora</Text>
+            <Text>{timeText}</Text>
             <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Localizacion</Text>
             <Text>{coords}</Text>
             <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Mac</Text>
