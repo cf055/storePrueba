@@ -19,7 +19,7 @@ export default function AddReadingScreen () {
       }
 
       //.timestamp para hora
-      let location = await (await Location.getCurrentPositionAsync({})).coords;
+      let location = (await Location.getCurrentPositionAsync({})).coords;
       setLocation(location);
       let time = await ( await Location.getCurrentPositionAsync({})).timestamp;
       setTime(time);
