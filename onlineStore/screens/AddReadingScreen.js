@@ -1,39 +1,15 @@
-import React, { useState, useEffect } from 'react' // localizacion
+import React, { Component } from 'react' 
 import { View, Text, ScrollView, SafeAreaView, TextInput, TouchableOpacity } from 'react-native';
 import Layout from '../constants/Layout';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import * as Location from 'expo-location'; // localizacion
-
 import { dateTime }  from '../Services/DateTimeService';
 
+import { locationService } from '../Services/LocationService'
+
 export default function AddReadingScreen () {  
-  const [location, setLocation] = useState(null); // localizacion
-  const [errorMsg, setErrorMsg] = useState(null); // localizacion
-
-  // localizacion todo esto
-  useEffect(() => {
-    (async () => {
-      let { status } = await Location.requestPermissionsAsync();
-      if (status !== 'granted') {
-        setErrorMsg('Permission to access location was denied');
-      }
-
-      //.timestamp para hora
-      let location = (await Location.getCurrentPositionAsync({})).coords;
-      setLocation(location);
-    });
-  });
   
-  // localizacion
-  let coords = 'Waiting..';
   let time = dateTime();
-
-  // localizacion devolver if
-  if (errorMsg) {
-    coords = errorMsg;
-  } else if (location) {
-    coords = location.latitude + ' / ' + location.longitude;
-  }
+  let localization = locationService();
 
   return (
     <SafeAreaView style={Layout.safeArea}>
@@ -50,7 +26,7 @@ export default function AddReadingScreen () {
             <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Fecha - Hora</Text>
             <Text>{ time }</Text>
             <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Localizacion</Text>
-            <Text>{coords}</Text>
+            <Text>{ localization }</Text>
             <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Mac</Text>
 
             <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Medida</Text>
@@ -68,9 +44,7 @@ export default function AddReadingScreen () {
                 <MaterialCommunityIcons onPress={() => console.log('scanea aqui')} name="qrcode-scan" size={50} color="white" />
               </TouchableOpacity>
             </View>
-
         </View>
-
       </View>
     </SafeAreaView>
   );

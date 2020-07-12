@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 
 import * as Location from 'expo-location';
 
-export default function LocationService () { 
-    const [location, setLocation] = useState(null);
+function locationService() { 
+  const [location, setLocation] = useState(null);
   const [errorMsg, setErrorMsg] = useState(null);
 
   useEffect(() => {
@@ -23,9 +23,11 @@ export default function LocationService () {
 
   if (errorMsg) {
     coords = errorMsg;
+    return coords;
   } else if (location) {
     coords = JSON.stringify(location.latitude + ' / ' + location.longitude);
+    return coords;
   }
-
-  return coords;
 }
+
+export { locationService };
