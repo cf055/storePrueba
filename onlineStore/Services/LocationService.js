@@ -25,7 +25,7 @@ function locationService() {
     coords = errorMsg;
     return coords;
   } else if (location) {
-    coords = JSON.stringify(location.latitude + ' / ' + location.longitude);
+    coords = location.latitude + ' / ' + location.longitude;
     return coords;
   }
 }
