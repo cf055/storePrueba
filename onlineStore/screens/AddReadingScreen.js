@@ -4,51 +4,16 @@ import Layout from '../constants/Layout';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import * as Location from 'expo-location'; // localizacion
 
-
-function localizacionEjemplo(){
-  async () => {
-    const [location, setLocation] = useState(null); // localizacion
-  const [errorMsg, setErrorMsg] = useState(null); // localizacion
-  const [time, setTime] = useState(null); // localizacion
-  let { status } = await Location.requestPermissionsAsync();
-    if (status !== 'granted') {
-      setErrorMsg('Permission to access location was denied');
-    }
-
-    //.timestamp para hora
-    let location = (await Location.getCurrentPositionAsync({})).coords;
-    setLocation(location);
-    let time = await ( await Location.getCurrentPositionAsync({})).timestamp;
-    setTime(time);
-
-    // localizacion
-let coords = 'Waiting..';
-let timeText = 'Waiting..';
-
-// localizacion devolver if
-  if (errorMsg) {
-    coords = errorMsg;
-    timeText = errorMsg;
-  } else if (location) {
-    coords = JSON.stringify(location.latitude + ' / ' + location.longitude);
-    timeText = JSON.stringify(time);
-    console.log(time);
-  }
-  }
-}
+import { timeText }  from '../Services/DateTimeService';
 
 export default function AddReadingScreen () {  
-
-  
-  /*const [location, setLocation] = useState(null); // localizacion
+  const [location, setLocation] = useState(null); // localizacion
   const [errorMsg, setErrorMsg] = useState(null); // localizacion
-  const [time, setTime] = useState(null); // localizacion*/
 
   // localizacion todo esto
   useEffect(() => {
     (async () => {
-      localizacionEjemplo();
-      /*let { status } = await Location.requestPermissionsAsync();
+      let { status } = await Location.requestPermissionsAsync();
       if (status !== 'granted') {
         setErrorMsg('Permission to access location was denied');
       }
@@ -56,25 +21,18 @@ export default function AddReadingScreen () {
       //.timestamp para hora
       let location = (await Location.getCurrentPositionAsync({})).coords;
       setLocation(location);
-      let time = await ( await Location.getCurrentPositionAsync({})).timestamp;
-      setTime(time);*/
-    })();
+    });
   });
   
   // localizacion
-  /*let coords = 'Waiting..';
-  let timeText = 'Waiting..';
+  let coords = 'Waiting..';
 
   // localizacion devolver if
   if (errorMsg) {
     coords = errorMsg;
   } else if (location) {
-    coords = JSON.stringify(location.latitude + ' / ' + location.longitude);
-    timeText = JSON.stringify(time);
-     console.log(time);
-  }*/
-
-  let timeText = date + '/' +  month + '/' + year + ' ' + hours + ':' + min + ':' + sec;
+    coords = location.latitude + ' / ' + location.longitude;
+  }
 
   return (
     <SafeAreaView style={Layout.safeArea}>
@@ -89,7 +47,7 @@ export default function AddReadingScreen () {
           <ScrollView>
             <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Id Medidor</Text>
             <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Fecha - Hora</Text>
-            <Text>{timeText}</Text>
+            <Text>{ timeText }</Text>
             <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Localizacion</Text>
             <Text>{coords}</Text>
             <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Mac</Text>
