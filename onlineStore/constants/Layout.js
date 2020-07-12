@@ -60,8 +60,8 @@ export default {
     height: 40,
     borderWidth: 1,
     borderColor: "white",
-    
     padding: 10,
-    marginHorizontal: 30    
+    marginHorizontal: 30,
+    borderBottomColor: Color.principalColor 
   }
 };
