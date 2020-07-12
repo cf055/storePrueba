@@ -4,16 +4,51 @@ import Layout from '../constants/Layout';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import * as Location from 'expo-location'; // localizacion
 
-import { BarCodeScanner } from 'expo-barcode-scanner';
+
+function localizacionEjemplo(){
+  async () => {
+    const [location, setLocation] = useState(null); // localizacion
+  const [errorMsg, setErrorMsg] = useState(null); // localizacion
+  const [time, setTime] = useState(null); // localizacion
+  let { status } = await Location.requestPermissionsAsync();
+    if (status !== 'granted') {
+      setErrorMsg('Permission to access location was denied');
+    }
+
+    //.timestamp para hora
+    let location = (await Location.getCurrentPositionAsync({})).coords;
+    setLocation(location);
+    let time = await ( await Location.getCurrentPositionAsync({})).timestamp;
+    setTime(time);
+
+    // localizacion
+let coords = 'Waiting..';
+let timeText = 'Waiting..';
+
+// localizacion devolver if
+  if (errorMsg) {
+    coords = errorMsg;
+    timeText = errorMsg;
+  } else if (location) {
+    coords = JSON.stringify(location.latitude + ' / ' + location.longitude);
+    timeText = JSON.stringify(time);
+    console.log(time);
+  }
+  }
+}
 
 export default function AddReadingScreen () {  
-  const [location, setLocation] = useState(null); // localizacion
+
+  
+  /*const [location, setLocation] = useState(null); // localizacion
   const [errorMsg, setErrorMsg] = useState(null); // localizacion
+  const [time, setTime] = useState(null); // localizacion*/
 
   // localizacion todo esto
   useEffect(() => {
     (async () => {
-      let { status } = await Location.requestPermissionsAsync();
+      localizacionEjemplo();
+      /*let { status } = await Location.requestPermissionsAsync();
       if (status !== 'granted') {
         setErrorMsg('Permission to access location was denied');
       }
@@ -21,26 +56,23 @@ export default function AddReadingScreen () {
       //.timestamp para hora
       let location = (await Location.getCurrentPositionAsync({})).coords;
       setLocation(location);
+      let time = await ( await Location.getCurrentPositionAsync({})).timestamp;
+      setTime(time);*/
     })();
   });
   
   // localizacion
-  let coords = 'Waiting..';
-  
-  // fecha y hora
-  var date = new Date().getDate();
-  var month = new Date().getMonth() + 1; 
-  var year = new Date().getFullYear();
-  var hours = new Date().getHours(); 
-  var min = new Date().getMinutes();
-  var sec = new Date().getSeconds();
+  /*let coords = 'Waiting..';
+  let timeText = 'Waiting..';
 
   // localizacion devolver if
   if (errorMsg) {
     coords = errorMsg;
   } else if (location) {
-    coords = location.latitude + ' / ' + location.longitude;
-  }
+    coords = JSON.stringify(location.latitude + ' / ' + location.longitude);
+    timeText = JSON.stringify(time);
+     console.log(time);
+  }*/
 
   let timeText = date + '/' +  month + '/' + year + ' ' + hours + ':' + min + ':' + sec;
 
