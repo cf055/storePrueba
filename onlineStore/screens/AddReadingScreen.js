@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import { View, Text, ScrollView, SafeAreaView, TextInput, TouchableOpacity } from 'react-native';
 import Layout from '../constants/Layout';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { dateTime }  from '../Services/DateTimeService';
+import { dateTime }  from '../services/DateTimeService';
 
-import { locationService } from '../Services/LocationService'
+import { locationService } from '../services/LocationService'
 
 export default function AddReadingScreen () {  
   
