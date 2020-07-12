@@ -5,19 +5,6 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import * as Location from 'expo-location'; // localizacion
 
-
-function timeEjemplo(){
-   // fecha y hora
-   var date = new Date().getDate();
-   var month = new Date().getMonth() + 1; 
-   var year = new Date().getFullYear();
-   var hours = new Date().getHours(); 
-   var min = new Date().getMinutes();
-   var sec = new Date().getSeconds();
-   let timeText = date + '/' +  month + '/' + year + ' ' + hours + ':' + min + ':' + sec;
-   return <Text>{timeText}</Text>;
-
-}
 export default function AddReadingScreen () {  
   const [location, setLocation] = useState(null); // localizacion
   const [errorMsg, setErrorMsg] = useState(null); // localizacion
@@ -57,6 +44,13 @@ export default function AddReadingScreen () {
   let timeText = date + '/' +  month + '/' + year + ' ' + hours + ':' + min + ':' + sec;
 
   return (
+    <TimeEjemplo value={timeText} value2={coords} />
+
+  );
+} 
+
+function TimeEjemplo({value,value2}){
+  return (
     <SafeAreaView style={Layout.safeArea}>
       <View style={{flex: 1}}>
         <View style={Layout.viewTitle}>
@@ -69,9 +63,9 @@ export default function AddReadingScreen () {
           <ScrollView>
             <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Id Medidor</Text>
             <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Fecha - Hora</Text>
-            <Text>{timeText}</Text>
+            <Text>{value}</Text>
             <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Localizacion</Text>
-            <Text>{coords}</Text>
+            <Text>{value2}</Text>
             <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Mac</Text>
 
             <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Medida</Text>
@@ -95,4 +89,4 @@ export default function AddReadingScreen () {
       </View>
     </SafeAreaView>
   );
-} 
+}
