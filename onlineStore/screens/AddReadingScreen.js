@@ -5,24 +5,34 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import * as Location from 'expo-location'; // localizacion
 
+
+function timeEjemplo(){
+   // fecha y hora
+   var date = new Date().getDate();
+   var month = new Date().getMonth() + 1; 
+   var year = new Date().getFullYear();
+   var hours = new Date().getHours(); 
+   var min = new Date().getMinutes();
+   var sec = new Date().getSeconds();
+   let timeText = date + '/' +  month + '/' + year + ' ' + hours + ':' + min + ':' + sec;
+   return <Text>{timeText}</Text>;
+
+}
 export default function AddReadingScreen () {  
   const [location, setLocation] = useState(null); // localizacion
   const [errorMsg, setErrorMsg] = useState(null); // localizacion
-  const [time, setTime] = useState(null);
 
   // localizacion todo esto
   useEffect(() => {
     (async () => {
-      //localizacionEjemplo();
       let { status } = await Location.requestPermissionsAsync();
       if (status !== 'granted') {
         setErrorMsg('Permission to access location was denied');
       }
+
       //.timestamp para hora
       let location = (await Location.getCurrentPositionAsync({})).coords;
       setLocation(location);
-      let time = await ( await Location.getCurrentPositionAsync({})).timestamp;
-      setTime(time);
     })();
   });
   
