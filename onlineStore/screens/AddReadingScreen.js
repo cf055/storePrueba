@@ -5,7 +5,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import * as Location from 'expo-location'; // localizacion
 import TimeEjemplo from '../Services/ejemplo';
 
-import { timeText }  from '../Services/DateTimeService';
+import { dateTime }  from '../Services/DateTimeService';
 
 export default function AddReadingScreen () {  
   const [location, setLocation] = useState(null); // localizacion
@@ -27,6 +27,7 @@ export default function AddReadingScreen () {
   
   // localizacion
   let coords = 'Waiting..';
+  let time = dateTime();
 
   // localizacion devolver if
   if (errorMsg) {
@@ -48,7 +49,7 @@ export default function AddReadingScreen () {
           <ScrollView>
             <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Id Medidor</Text>
             <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Fecha - Hora</Text>
-            <Text>{ timeText }</Text>
+            <Text>{ time }</Text>
             <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Localizacion</Text>
             <Text>{coords}</Text>
             <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Mac</Text>
