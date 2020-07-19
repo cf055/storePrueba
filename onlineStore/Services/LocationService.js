@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from '../node_modules/react';
 
-import * as Location from 'expo-location';
+import * as Location from '../node_modules/expo-location/build/Location';
 
 function locationService() { 
   const [location, setLocation] = useState('ejemplo');
