@@ -3,9 +3,11 @@ import { useState, useEffect } from 'react'
 import * as Location from 'expo-location';
 
 function locationService() { 
-  const [location, setLocation] = useState(null);
+  const [location, setLocation] = useState('ejemplo');
   const [errorMsg, setErrorMsg] = useState(null);
-
+  const [hasPermission, setHasPermission] = useState(null);
+  const [scanned, setScanned] = useState(false);
+  
   useEffect(() => {
     (async () => {
       let { status } = await Location.requestPermissionsAsync();

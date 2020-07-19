@@ -1,13 +1,80 @@
 import React, { Component } from 'react' 
-import { View, Text, ScrollView, SafeAreaView, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, ScrollView, SafeAreaView, Modal, TouchableHighlight, Alert, TextInput, StyleSheet, Button, TouchableOpacity } from 'react-native';
 import Layout from '../constants/Layout';
+import { useState, useEffect } from 'react'
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import * as Permissions from 'expo-permissions';
 import { dateTime }  from '../Services/DateTimeService';
+import { locationService } from '../Services/LocationService';
+import * as Location from 'expo-location';
+import Constants from 'expo-constants';
+import { Dimensions } from 'react-native';
+const { width } = Dimensions.get('window');
+const qrSize = width * 0.7;
 
-import { locationService } from '../Services/LocationService'
+import { BarCodeScanner } from 'expo-barcode-scanner';
+
 
 export default function AddReadingScreen () {  
+
+  //Codigo qr.
+  const [modalVisible, setModalVisible] = useState(false);
+  const [scanned, setScanned] = useState(false);
+  const [codeqr, setCodeqr] = useState('');
+  const [hasPermission, setHasPermission] = useState(null);
+  //Codigo localitation.
+  //const [location, setLocation] = useState('ejemplo');
+  //const [errorMsg, setErrorMsg] = useState(null);
   
+
+  useEffect(() => {
+    (async () => {
+
+      //Codigo qr.
+      //console.log("ejemplo");
+      const { status } = await Permissions.askAsync(Permissions.CAMERA);
+      //const { status } = await BarCodeScanner.requestPermissionsAsync();
+      if (status !== 'granted') {
+        console.log('Permission to access location was denied');
+      }
+
+      //Codigo localitation.
+      /*let { status2 } = await Location.requestPermissionsAsync();
+      if (status2 !== 'granted') {
+        setErrorMsg('Permission to access location was denied');
+      }
+
+      //.timestamp para hora
+      let location = await (await Location.getCurrentPositionAsync({})).coords;
+      setLocation(location);*/
+      
+    })();
+  }, []);
+
+  /*let coords = 'Waiting..';
+
+  if (errorMsg) {
+    coords = errorMsg;
+    return coords;
+  } else if (location) {
+    coords = location.latitude + ' / ' + location.longitude;
+    return coords;
+  }*/
+  
+  const handleBarCodeScanned = ({ type, data }) => {
+    setScanned(true);
+    setCodeqr(data);
+    setModalVisible(!modalVisible);
+    //alert(`Bar code with type ${type} and data ${data} has been scanned!`);
+  };
+
+  /*if (hasPermission === null) {
+    return <Text>Requesting for camera permission</Text>;
+  }
+  if (hasPermission === false) {
+    return <Text>No access to camera</Text>;
+  }*/
+
   let time = dateTime();
   let localization = locationService();
 
@@ -24,9 +91,9 @@ export default function AddReadingScreen () {
           <ScrollView>
             <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Id Medidor</Text>
             <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Fecha - Hora</Text>
-            <Text>{ time }</Text>
+            <Text style={{marginHorizontal: 30}}>{time}</Text>
             <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Localizacion</Text>
-            <Text>{ localization }</Text>
+            <Text style={{marginHorizontal: 30}}>{localization}</Text>
             <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Mac</Text>
 
             <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Medida</Text>
@@ -35,23 +102,65 @@ export default function AddReadingScreen () {
             <TextInput placeholder='Ingrese comentario' style={Layout.inputWithoutBorder} />
             <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Observacion</Text>
             <TextInput placeholder='Ingrese observacion' style={Layout.inputWithoutBorder} />
+            <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Codigo qr.</Text>
+            <Text style={{marginHorizontal: 30, fontSize: 15}}>{codeqr}</Text>
 
           </ScrollView>
 
           <View style={{alignItems:'flex-end', bottom:30, right:30}}>
               <TouchableOpacity
                 style={Layout.floatButton}>
-                <MaterialCommunityIcons onPress={() => console.log('scanea aqui')} name="qrcode-scan" size={50} color="white" />
+                <MaterialCommunityIcons onPress={() => setModalVisible(true)} name="qrcode-scan" size={50} color="white" />
               </TouchableOpacity>
-              <BarCodeScanner
-        onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
-        style={StyleSheet.absoluteFillObject}
-      />
+          </View>
+          <Modal
+            animationType="slide"
+            transparent={false}
+            visible={modalVisible}
+            onRequestClose={() => {
+              setModalVisible(!modalVisible);
+            }}>
 
-      {scanned && <Button title={'Tap to Scan Again'} onPress={() => setScanned(false)} />}
-            </View>
+          <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'flex-end'}}>
+              <BarCodeScanner
+                onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
+                style={[StyleSheet.absoluteFillObject, styles.container]}>
+              <Text style={styles.description}>Scan your QR code</Text>
+              <Text onPress={() => alert('Navigate back from here')} style={styles.cancel}> Cancel </Text>
+              </BarCodeScanner>
+              {scanned && <Button title={'Tap to Scan Again'} onPress={() => setScanned(false)} />}
+          </View>
+          </Modal>
         </View>
       </View>
     </SafeAreaView>
   );
 } 
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingTop: Constants.statusBarHeight,
+    backgroundColor: '#ecf0f1',
+    padding: 7,
+  },
+  qr: {
+    marginTop: '20%',
+    marginBottom: '20%',
+    width: qrSize,
+    height: qrSize,
+  },
+  description: {
+    fontSize: width * 0.10,
+    textAlign: 'center',
+    width: '70%',
+    color: 'white',
+  },
+  cancel: {
+    fontSize: width * 0.05,
+    textAlign: 'center',
+    color: 'white',
+  },
+});
