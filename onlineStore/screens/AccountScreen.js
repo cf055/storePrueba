@@ -1,9 +1,11 @@
-import React, { Component, UseState, useState } from 'react'
+import React, { Component, useState, useEffect } from 'react'
 import { View, Text, StyleSheet, ScrollView, Image, SafeAreaView, TextInput, TouchableOpacity  } from 'react-native';
 import Layout from '../constants/Layout';
 import { AntDesign } from '@expo/vector-icons'; 
+import { KeyboardAvoidingView } from 'react-native';
 
 export default function AccountScreen () {
+  
   return (
     <ActivateButton/>
   );
@@ -12,6 +14,13 @@ export default function AccountScreen () {
 function ActivateButton(){
 
   const[showInput, setShowInput] = useState(false);
+
+  useEffect(() => {
+    (async () => {
+      setShowInput(false);
+    })();
+}, []);
+
   const textEjemplo = 'Ejemplo text.';
   return (
     <SafeAreaView style={Layout.safeArea}>
@@ -40,15 +49,15 @@ function ActivateButton(){
             <TextInput editable={showInput} style={[Layout.inputWithoutBorder,{borderBottomColor: showInput ? 'blue':'red'}]}/>
             <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Numero MAC</Text>
             <TextInput editable={showInput} style={[Layout.inputWithoutBorder,{borderBottomColor: showInput ? 'blue':'red'}]} />
-            <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>{textEjemplo}</Text>
+            <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>{setVal}</Text>
             <TextInput editable={showInput} style={[Layout.inputWithoutBorder,{borderBottomColor: showInput ? 'blue':'red'}]} />
           </View>
-          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-          <TouchableOpacity  onPress={() => setShowInput(false)}  style={Layout.buttonDesing}>
+        </ScrollView>
+        </View>
+        <View style={{flex:1,justifyContent: 'center', alignItems: 'center', backgroundColor: 'white' }}>
+          <TouchableOpacity  onPress={() => setShowInput(false)} style={Layout.buttonDesing}>
             <Text style={Layout.textButtonDesing} >Guardar</Text>
           </TouchableOpacity>
-          </View>
-        </ScrollView>
         </View>
       </View>
     </SafeAreaView>

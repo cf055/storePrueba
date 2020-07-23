@@ -3,17 +3,13 @@ import { View, Text, ScrollView, SafeAreaView, Modal, TouchableHighlight, Alert,
 import Layout from '../constants/Layout';
 import { useState, useEffect } from 'react'
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import * as Permissions from 'expo-permissions';
 import { dateTime }  from '../Services/DateTimeService';
-import { locationService } from '../Services/LocationService';
-import * as Location from 'expo-location';
+import { locationService, lectorqrService, handleBarCodeScanned } from '../Services/LocationService';
 import Constants from 'expo-constants';
 import { Dimensions } from 'react-native';
+import { BarCodeScanner } from 'expo-barcode-scanner';
 const { width } = Dimensions.get('window');
 const qrSize = width * 0.7;
-
-import { BarCodeScanner } from 'expo-barcode-scanner';
-
 
 export default function AddReadingScreen () {  
 
@@ -21,61 +17,12 @@ export default function AddReadingScreen () {
   const [modalVisible, setModalVisible] = useState(false);
   const [scanned, setScanned] = useState(false);
   const [codeqr, setCodeqr] = useState('');
-  const [hasPermission, setHasPermission] = useState(null);
-  //Codigo localitation.
-  //const [location, setLocation] = useState('ejemplo');
-  //const [errorMsg, setErrorMsg] = useState(null);
-  
+  lectorqrService();
 
-  useEffect(() => {
-    (async () => {
-
-      //Codigo qr.
-      //console.log("ejemplo");
-      const { status } = await Permissions.askAsync(Permissions.CAMERA);
-      //const { status } = await BarCodeScanner.requestPermissionsAsync();
-      if (status !== 'granted') {
-        console.log('Permission to access location was denied');
-      }
-
-      //Codigo localitation.
-      /*let { status2 } = await Location.requestPermissionsAsync();
-      if (status2 !== 'granted') {
-        setErrorMsg('Permission to access location was denied');
-      }
-
-      //.timestamp para hora
-      let location = await (await Location.getCurrentPositionAsync({})).coords;
-      setLocation(location);*/
-      
-    })();
-  }, []);
-
-  /*let coords = 'Waiting..';
-
-  if (errorMsg) {
-    coords = errorMsg;
-    return coords;
-  } else if (location) {
-    coords = location.latitude + ' / ' + location.longitude;
-    return coords;
-  }*/
-  
-  const handleBarCodeScanned = ({ type, data }) => {
-    setScanned(true);
-    setCodeqr(data);
-    setModalVisible(!modalVisible);
-    //alert(`Bar code with type ${type} and data ${data} has been scanned!`);
-  };
-
-  /*if (hasPermission === null) {
-    return <Text>Requesting for camera permission</Text>;
-  }
-  if (hasPermission === false) {
-    return <Text>No access to camera</Text>;
-  }*/
-
+  //Time.
   let time = dateTime();
+
+  //Localitation.
   let localization = locationService();
 
   return (
