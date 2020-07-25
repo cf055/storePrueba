@@ -3,8 +3,8 @@ import { View, Text, ScrollView, SafeAreaView, Modal, TouchableHighlight, Alert,
 import Layout from '../constants/Layout';
 import { useState, useEffect } from 'react'
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { dateTime }  from '../Services/DateTimeService';
-import { locationService, lectorqrService, handleBarCodeScanned } from '../Services/LocationService';
+import { dateTime }  from '../services/DateTimeService';
+import { locationService, lectorqrService, handleBarCodeScanned } from '../services/LocationService';
 import Constants from 'expo-constants';
 import { Dimensions } from 'react-native';
 import { BarCodeScanner } from 'expo-barcode-scanner';
