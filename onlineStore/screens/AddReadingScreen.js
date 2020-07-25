@@ -4,7 +4,7 @@ import Layout from '../constants/Layout';
 import { useState, useEffect } from 'react'
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { dateTime }  from '../Services/DateTimeService';
-import { locationService, lectorqrService, handleBarCodeScanned } from '../Services/LocationService';
+import { locationService, lectorqrService } from '../Services/LocationService';
 import Constants from 'expo-constants';
 import { Dimensions } from 'react-native';
 import { BarCodeScanner } from 'expo-barcode-scanner';
@@ -24,6 +24,13 @@ export default function AddReadingScreen () {
 
   //Localitation.
   let localization = locationService();
+
+  const handleBarCodeScanned = ({ type, data }) => {
+    setScanned(true);
+    setCodeqr(data);
+    setModalVisible(!modalVisible);
+    //alert(`Bar code with type ${type} and data ${data} has been scanned!`);
+  };
 
   return (
     <SafeAreaView style={Layout.safeArea}>

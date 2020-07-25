@@ -49,7 +49,7 @@ function ActivateButton(){
             <TextInput editable={showInput} style={[Layout.inputWithoutBorder,{borderBottomColor: showInput ? 'blue':'red'}]}/>
             <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Numero MAC</Text>
             <TextInput editable={showInput} style={[Layout.inputWithoutBorder,{borderBottomColor: showInput ? 'blue':'red'}]} />
-            <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>{setVal}</Text>
+            <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Ejemplo</Text>
             <TextInput editable={showInput} style={[Layout.inputWithoutBorder,{borderBottomColor: showInput ? 'blue':'red'}]} />
           </View>
         </ScrollView>

@@ -61,4 +61,4 @@ const handleBarCodeScanned = ({ type, data }) => {
   setModalVisible(!modalVisible);
   //alert(`Bar code with type ${type} and data ${data} has been scanned!`);
 };
-export { locationService, lectorqrService, handleBarCodeScanned};
+export { locationService, lectorqrService};
