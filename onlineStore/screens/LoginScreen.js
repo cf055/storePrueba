@@ -1,5 +1,5 @@
 import React, { Component, useState } from 'react'
-import { View, Text, TextInput, Image, TouchableOpacity, SafeAreaView} from 'react-native';
+import { View, Text, TextInput, Image, TouchableOpacity, SafeAreaView, Alert} from 'react-native';
 import Layout from '../constants/Layout'
 import { MaterialCommunityIcons, Zocial } from '@expo/vector-icons';
 import { useSafeArea } from 'react-native-safe-area-context';
@@ -56,5 +56,5 @@ function singIn(navigation, Firebase, username, password){
   Firebase.auth()
       .signInWithEmailAndPassword(username, password)
       .then(() => navigation.navigate('TapsScreen'))
-      .catch(error => console.log(error));
+      .catch((error => alert(error)));
 }
