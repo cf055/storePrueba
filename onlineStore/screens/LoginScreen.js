@@ -1,8 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component, useState } from 'react'
 import { View, Text, TextInput, Image, TouchableOpacity, SafeAreaView} from 'react-native';
 import Layout from '../constants/Layout'
 import { MaterialCommunityIcons, Zocial } from '@expo/vector-icons';
 import { useSafeArea } from 'react-native-safe-area-context';
+import { Firebase } from '../database/configFirebase'
 
 export default function LoginScreen({ navigation }) {
   const insets = useSafeArea();
@@ -30,7 +31,7 @@ export default function LoginScreen({ navigation }) {
       
         <View style={{marginTop: 40}}>
           <TouchableOpacity 
-            onPress={() => navigation.navigate('TapsScreen')} 
+            onPress={() => singIn(navigation, Firebase)}
             style={Layout.buttonDesing}>
             
             <Text style={Layout.textButtonDesing}>Ingresar</Text>
@@ -47,3 +48,10 @@ export default function LoginScreen({ navigation }) {
     </SafeAreaView>
   )
 }  
+
+function singIn(navigation, Firebase){
+  Firebase.auth()
+      .signInWithEmailAndPassword('daniela@outlook.com', '123456')
+      .then(() => navigation.navigate('TapsScreen'))
+      .catch(error => console.log(error));
+}

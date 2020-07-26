@@ -1,13 +1,10 @@
 import { useState, useEffect } from '../node_modules/react';
-
 import * as Location from '../node_modules/expo-location/build/Location';
 import * as Permissions from 'expo-permissions';
 
 function locationService() { 
   const [location, setLocation] = useState('ejemplo');
   const [errorMsg, setErrorMsg] = useState(null);
-  const [hasPermission, setHasPermission] = useState(null);
-  const [scanned, setScanned] = useState(false);
   
   useEffect(() => {
     (async () => {
@@ -33,7 +30,6 @@ function locationService() {
 }
 
 function lectorqrService() {
-  const [hasPermission, setHasPermission] = useState(null);
   useEffect(() => {
     (async () => {
       
@@ -55,10 +51,4 @@ function lectorqrService() {
   }*/
 }
 
-const handleBarCodeScanned = ({ type, data }) => {
-  setScanned(true);
-  setCodeqr(data);
-  setModalVisible(!modalVisible);
-  //alert(`Bar code with type ${type} and data ${data} has been scanned!`);
-};
 export { locationService, lectorqrService};
