@@ -7,7 +7,8 @@ import { Firebase } from '../database/configFirebase'
 
 export default function LoginScreen({ navigation }) {
   const insets = useSafeArea();
-  
+  const [username, setUserName] = useState('');
+  const [password, setPassword] = useState('');
   return(
     <SafeAreaView style={{paddingTop: insets.top, paddingBottom: insets.bottom, flex: 1}}>
       <View style={Layout.containerDesing}>
@@ -32,7 +33,7 @@ export default function LoginScreen({ navigation }) {
       
         <View style={{marginTop: 40}}>
           <TouchableOpacity 
-            onPress={() => singIn(navigation, Firebase)}
+            onPress={() => singIn(navigation, Firebase, {username}, {password})}
             style={Layout.buttonDesing}>
             
             <Text style={Layout.textButtonDesing}>Ingresar</Text>
@@ -50,9 +51,8 @@ export default function LoginScreen({ navigation }) {
   )
 }  
 
-function singIn(navigation, Firebase){
-  const [username, setUserName] = useState('');
-  const [password, setPassword] = useState('');
+function singIn(navigation, Firebase, username, password){
+  
   Firebase.auth()
       .signInWithEmailAndPassword(username,password)
       .then(() => navigation.navigate('TapsScreen'))
