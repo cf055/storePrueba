@@ -7,6 +7,7 @@ import { Firebase } from '../database/configFirebase'
 
 export default function LoginScreen({ navigation }) {
   const insets = useSafeArea();
+  
   return(
     <SafeAreaView style={{paddingTop: insets.top, paddingBottom: insets.bottom, flex: 1}}>
       <View style={Layout.containerDesing}>
@@ -17,14 +18,14 @@ export default function LoginScreen({ navigation }) {
           
           <View style={{flexDirection:"row"}}>
             <Zocial style={Layout.iconsDesingLogin} name="email" size={20} />
-            <TextInput style={Layout.inputBorderDesing} placeholder={'Correo'} />
+            <TextInput value={username} onChangeText={text => setUserName(text)} style={Layout.inputBorderDesing} placeholder={'Correo'} />
           </View>
 
           <Text style={{fontWeight: "bold",}} >CONTRASEÑA</Text>
 
           <View style={{flexDirection:"row"}}>
             <MaterialCommunityIcons style={Layout.iconsDesingLogin} name="textbox-password" size={20} />
-            <TextInput style={Layout.inputBorderDesing} placeholder={'Contraseña'} />
+            <TextInput value={password} onChangeText={text => setPassword(text)} style={Layout.inputBorderDesing} placeholder={'Contraseña'} />
           </View>
 
         </View>
@@ -50,8 +51,10 @@ export default function LoginScreen({ navigation }) {
 }  
 
 function singIn(navigation, Firebase){
+  const [username, setUserName] = useState('');
+  const [password, setPassword] = useState('');
   Firebase.auth()
-      .signInWithEmailAndPassword('daniela@outlook.com', '123456')
+      .signInWithEmailAndPassword(username,password)
       .then(() => navigation.navigate('TapsScreen'))
       .catch(error => console.log(error));
 }
