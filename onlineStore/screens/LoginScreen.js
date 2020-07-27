@@ -4,11 +4,25 @@ import Layout from '../constants/Layout'
 import { MaterialCommunityIcons, Zocial } from '@expo/vector-icons';
 import { useSafeArea } from 'react-native-safe-area-context';
 import { Firebase } from '../database/configFirebase'
+import { Entypo } from '@expo/vector-icons';
 
 export default function LoginScreen({ navigation }) {
   const insets = useSafeArea();
   const [username, setUserName] = useState('');
   const [password, setPassword] = useState('');
+  const [iconShow, setIconShow] = useState('eye');
+  const [showPassword, setShowPassword] = useState(true);
+
+  const changeIcon = () => {
+    if (iconShow == 'eye') {
+      setIconShow('eye-with-line');
+      setShowPassword(false);
+    }
+    if (iconShow == 'eye-with-line') {
+      setIconShow('eye');
+      setShowPassword(true);
+    }
+  };
   
   return(
     <SafeAreaView style={{paddingTop: insets.top, paddingBottom: insets.bottom, flex: 1}}>
@@ -27,7 +41,8 @@ export default function LoginScreen({ navigation }) {
 
           <View style={{flexDirection:"row"}}>
             <MaterialCommunityIcons style={Layout.iconsDesingLogin} name="textbox-password" size={20} />
-            <TextInput value={password} onChangeText={text => setPassword(text)} style={Layout.inputBorderDesing} placeholder={'Contraseña'} />
+            <TextInput secureTextEntry={showPassword} value={password} onChangeText={text => setPassword(text)} style={Layout.inputBorderDesing} placeholder={'Contraseña'} />
+            <Entypo name={iconShow} style={Layout.iconsDesingLogin} size={24} onPress={changeIcon} />
           </View>
 
         </View>
