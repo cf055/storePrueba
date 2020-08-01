@@ -19,6 +19,7 @@ export default function App() {
       <NavigationContainer>
         <Stack.Navigator headerMode="none">
         <Stack.Screen name="TapsScreen" component={TapsScreen} />
+        <Stack.Screen name="AddReading" component={AddReadingScreen} />
         <Stack.Screen name="Login" component={LoginScreen} />
         </Stack.Navigator>
       </NavigationContainer>
