@@ -14,7 +14,7 @@ export default function App () {
   var isSignedIn = false;
   console.log(userToken);
 
-  if (isSignedIn == true) {
+  if (context.token2 == true) {
     return (  
       <NavigationContainer>
         <Stack.Navigator headerMode="none">

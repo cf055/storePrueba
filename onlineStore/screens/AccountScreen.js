@@ -2,7 +2,8 @@ import React, { Component, useState, useEffect } from 'react'
 import { View, Text, StyleSheet, ScrollView, Image, SafeAreaView, TextInput, TouchableOpacity  } from 'react-native';
 import Layout from '../constants/Layout';
 import { AntDesign } from '@expo/vector-icons'; 
-import { Firebase } from '../database/configFirebase'
+import { Firebase } from '../database/configFirebase';
+import * as context from '../database/Context'
 
 export default function AccountScreen ({ navigation }) {
   
@@ -16,9 +17,10 @@ function ActivateButton({navigation}){
   const[showInput, setShowInput] = useState(false);
 
   const logOut = () => {
-    Firebase.auth().signOut()
+    context.token2 = false;
+    /*Firebase.auth().signOut()
     .then(() => navigation.navigate('Login'))
-    .catch((error => alert(error)));
+    .catch((error => alert(error)));*/
   };
 
   useEffect(() => {

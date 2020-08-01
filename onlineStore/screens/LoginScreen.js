@@ -86,8 +86,9 @@ function singIn(navigation, Firebase, username, password){
       //User id.
       Firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
-          context.idUser = user.uid;
-          console.log(context.idUser)
+          context.token = user.uid;
+          console.log(context.token);
+          context.token2 = true;
         } else {
           console.log("error");
         }
