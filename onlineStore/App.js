@@ -7,29 +7,30 @@ import * as context from './database/Context';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-const Stack = createStackNavigator(); 
+const Stack = createStackNavigator();
 
-export default function App () {
+export default function App() {
   const userToken = context.token;
   var isSignedIn = false;
   console.log(userToken);
 
   if (!userToken == '') {
-    return (  
+    return (
       <NavigationContainer>
         <Stack.Navigator headerMode="none">
-        <Stack.Screen name="TapsScreen" component={TapsScreen} />
+          <Stack.Screen name="TapsScreen" component={TapsScreen} />
         </Stack.Navigator>
-      </NavigationContainer> 
+      </NavigationContainer>
     )
   } else {
     return (
       <NavigationContainer>
         <Stack.Navigator headerMode="none">
-        <Stack.Screen name="Login" component={LoginScreen} />
-        <Stack.Screen name="TapsScreen" component={TapsScreen} />
+          <Stack.Screen name="Login" component={LoginScreen} />
+          <Stack.Screen name="TapsScreen" component={TapsScreen} />
+          <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
         </Stack.Navigator>
-      </NavigationContainer> 
+      </NavigationContainer>
     )
   }
 } 
