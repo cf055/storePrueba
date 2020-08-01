@@ -3,6 +3,7 @@ import { View, Text, ScrollView, SafeAreaView, Modal, TouchableHighlight, Alert,
 import Layout from '../constants/Layout';
 import { useState, useEffect } from 'react'
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import * as context from '../database/ContextId'
 import { dateTime }  from '../services/DateTimeService';
 import { locationService, lectorqrService } from '../services/LocationService';
 import Constants from 'expo-constants';
@@ -12,11 +13,11 @@ const { width } = Dimensions.get('window');
 const qrSize = width * 0.7;
 
 export default function AddReadingScreen () {  
-
   //Codigo qr.
   const [modalVisible, setModalVisible] = useState(false);
   const [scanned, setScanned] = useState(false);
   const [codeqr, setCodeqr] = useState('');
+  //const contextId = React.useContext(ContextId);
   lectorqrService();
 
   //Time.

@@ -1,18 +1,20 @@
-import React, { Component, useState } from 'react'
+import React, { Component, useState, useEffect } from 'react'
 import { View, Text, TextInput, Image, TouchableOpacity, SafeAreaView, Alert} from 'react-native';
 import Layout from '../constants/Layout'
 import { MaterialCommunityIcons, Zocial } from '@expo/vector-icons';
+import * as context from '../database/ContextId'
 import { useSafeArea } from 'react-native-safe-area-context';
-import { Firebase } from '../database/configFirebase'
+import { Firebase } from '../database/configFirebase';
 import { Entypo } from '@expo/vector-icons';
 
 export default function LoginScreen({ navigation }) {
+
   const insets = useSafeArea();
   const [username, setUserName] = useState('');
   const [password, setPassword] = useState('');
   const [iconShow, setIconShow] = useState('eye');
   const [showPassword, setShowPassword] = useState(true);
-
+  
   const changeIcon = () => {
     if (iconShow == 'eye') {
       setIconShow('eye-with-line');
@@ -23,8 +25,16 @@ export default function LoginScreen({ navigation }) {
       setShowPassword(true);
     }
   };
+
+  useEffect(() => {
+    
+      setUserName('');
+      setPassword('');
+    
+  }, []);
   
   return(
+    //<ContextId.Provider value="blue">
     <SafeAreaView style={{paddingTop: insets.top, paddingBottom: insets.bottom, flex: 1}}>
       <View style={Layout.containerDesing}>
       <Image style={{marginTop:50, borderRadius:200, width:160, height:160}} source={require('../assets/images/Logo.png')} />
@@ -64,6 +74,7 @@ export default function LoginScreen({ navigation }) {
         </View>
       </View>
     </SafeAreaView>
+    //</ContextId.Provider>
   )
 }  
 
@@ -72,4 +83,13 @@ function singIn(navigation, Firebase, username, password){
       .signInWithEmailAndPassword(username, password)
       .then(() => navigation.navigate('TapsScreen'))
       .catch((error => alert(error)));
+      //User id.
+      Firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          console.log(user.uid);
+          context.idUser = user.uid;
+        } else {
+          console.log("error");
+        }
+      });   
 }

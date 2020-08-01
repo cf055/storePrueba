@@ -2,18 +2,24 @@ import React, { Component, useState, useEffect } from 'react'
 import { View, Text, StyleSheet, ScrollView, Image, SafeAreaView, TextInput, TouchableOpacity  } from 'react-native';
 import Layout from '../constants/Layout';
 import { AntDesign } from '@expo/vector-icons'; 
-import { KeyboardAvoidingView } from 'react-native';
+import { Firebase } from '../database/configFirebase'
 
-export default function AccountScreen () {
+export default function AccountScreen ({ navigation }) {
   
   return (
-    <ActivateButton/>
+    <ActivateButton navigation={navigation}/>
   );
 } 
 
-function ActivateButton(){
+function ActivateButton({navigation}){
 
   const[showInput, setShowInput] = useState(false);
+
+  const logOut = () => {
+    Firebase.auth().signOut()
+    .then(() => navigation.navigate('Login'))
+    .catch((error => alert(error)));
+  };
 
   useEffect(() => {
     (async () => {
@@ -44,6 +50,9 @@ function ActivateButton(){
         <View style={{flex:3, alignItems: 'stretch', backgroundColor: 'white' }}>
           <ScrollView style={styles.scrollView}>
             <Text style={{marginHorizontal: 20, padding: 10}}>Datos usuario</Text>
+            <TouchableOpacity  onPress={logOut} style={Layout.buttonDesing}>
+              <Text style={Layout.textButtonDesing} >Cerrar</Text>
+            </TouchableOpacity>
           <View style={{alignItems: 'stretch'}}>
             <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Numero de cedula</Text>
             <TextInput editable={showInput} style={[Layout.inputWithoutBorder,{borderBottomColor: showInput ? 'blue':'red'}]}/>
