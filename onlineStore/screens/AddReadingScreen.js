@@ -3,7 +3,7 @@ import { View, Text, ScrollView, SafeAreaView, Modal, TouchableHighlight, Alert,
 import Layout from '../constants/Layout';
 import { useState, useEffect } from 'react'
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import * as context from '../database/ContextId'
+import * as context from '../database/Context'
 import { dateTime }  from '../services/DateTimeService';
 import { locationService, lectorqrService } from '../services/LocationService';
 import Constants from 'expo-constants';

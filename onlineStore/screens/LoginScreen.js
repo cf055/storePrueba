@@ -2,7 +2,7 @@ import React, { Component, useState, useEffect } from 'react'
 import { View, Text, TextInput, Image, TouchableOpacity, SafeAreaView, Alert} from 'react-native';
 import Layout from '../constants/Layout'
 import { MaterialCommunityIcons, Zocial } from '@expo/vector-icons';
-import * as context from '../database/ContextId'
+import * as context from '../database/Context'
 import { useSafeArea } from 'react-native-safe-area-context';
 import { Firebase } from '../database/configFirebase';
 import { Entypo } from '@expo/vector-icons';
