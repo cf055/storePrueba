@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
-import LoginScreen from './screens/LoginScreen'
-import RegisterScreen from './screens/RegisterScreen'
+import React, { Component } from 'react';
+import LoginScreen from './screens/LoginScreen';
+import RegisterScreen from './screens/RegisterScreen';
 import TapsScreen from './screens/TapsScreen';
 import AddReadingScreen from './screens/AddReadingScreen';
-import * as context from './database/Context'
+import * as context from './database/Context';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
