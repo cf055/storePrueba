@@ -17,7 +17,7 @@ function ActivateButton({navigation}){
 
   const logOut = () => {
     Firebase.auth().signOut()
-    .then(() => navigation.navigate('Login'))
+    .then(() => navigation.popToTop())
     .catch((error => alert(error)));
   };
 

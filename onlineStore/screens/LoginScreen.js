@@ -89,6 +89,7 @@ function singIn(navigation, Firebase, username, password){
           context.idUser = user.uid;
           console.log(context.idUser)
         } else {
+          //verificar este if 
           console.log("error");
         }
       });   
