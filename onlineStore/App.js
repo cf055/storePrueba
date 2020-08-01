@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect} from 'react'
+import React, { Component } from 'react'
 import LoginScreen from './screens/LoginScreen'
 import RegisterScreen from './screens/RegisterScreen'
 import TapsScreen from './screens/TapsScreen';
