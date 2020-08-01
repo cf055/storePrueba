@@ -12,15 +12,25 @@ const Stack = createStackNavigator();
 export default function App () {
   const userToken = context.idUser;
   return (
-    <NavigationContainer>
+    /*<NavigationContainer>
       <Stack.Navigator headerMode="none">
         {userToken == '' ? (
           <Stack.Screen name="Login" component={LoginScreen} />
         ) : (
-          <Stack.Screen name="AddReading" component={AddReadingScreen} />
+          <Stack.Screen 
+        name="TapsScreen" 
+        component={TapsScreen} 
+        options={{
+          title: 'tap',
+          headerStyle: {
+            backgroundColor: '#f4511e',
+          },
+          headerTintColor: '#fff',
+        }}
+        />
         )}
       </Stack.Navigator>
-    </NavigationContainer> 
+    </NavigationContainer> */
     //<ContextId.Provider value="green">
     /*<NavigationContainer>
       <Stack.Navigator headerMode="none" initialRouteName="Login">
