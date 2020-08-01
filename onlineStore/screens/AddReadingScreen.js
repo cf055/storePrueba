@@ -12,7 +12,7 @@ import { BarCodeScanner } from 'expo-barcode-scanner';
 const { width } = Dimensions.get('window');
 const qrSize = width * 0.7;
 
-export default function AddReadingScreen () {  
+export default function AddReadingScreen ( {navigation} ) {  
   //Codigo qr.
   const [modalVisible, setModalVisible] = useState(false);
   const [scanned, setScanned] = useState(false);
@@ -81,7 +81,7 @@ export default function AddReadingScreen () {
                 onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
                 style={[StyleSheet.absoluteFillObject, styles.container]}>
               <Text style={styles.description}>Scan your QR code</Text>
-              <Text onPress={() => alert('Navigate back from here')} style={styles.cancel}> Cancel </Text>
+              <Text onPress={() => navigation.goBack()} style={styles.cancel}> Cancel </Text>
               </BarCodeScanner>
               {scanned && <Button title={'Tap to Scan Again'} onPress={() => setScanned(false)} />}
           </View>

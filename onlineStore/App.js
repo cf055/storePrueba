@@ -7,9 +7,9 @@ import * as context from './database/Context';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-const Stack = createStackNavigator(); 
+const Stack = createStackNavigator();
 
-export default function App () {
+export default function App() {
   const userToken = context.token;
   var isSignedIn = false;
   console.log(userToken);
@@ -22,7 +22,7 @@ export default function App () {
         <Stack.Screen name="AddReading" component={AddReadingScreen} />
         <Stack.Screen name="Login" component={LoginScreen} />
         </Stack.Navigator>
-      </NavigationContainer> 
+      </NavigationContainer>
     )
   } else {
     return (
@@ -31,8 +31,9 @@ export default function App () {
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="TapsScreen" component={TapsScreen} />
         <Stack.Screen name="Register" component={RegisterScreen} />
+        <Stack.Screen name="AddReading" component={AddReadingScreen} />
         </Stack.Navigator>
-      </NavigationContainer> 
+      </NavigationContainer>
     )
   }
 } 
