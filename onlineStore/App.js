@@ -14,11 +14,13 @@ export default function App() {
   var isSignedIn = false;
   console.log(userToken);
 
-  if (!userToken == '') {
-    return (
+  if (isSignedIn == true) {
+    return (  
       <NavigationContainer>
         <Stack.Navigator headerMode="none">
-          <Stack.Screen name="TapsScreen" component={TapsScreen} />
+        <Stack.Screen name="TapsScreen" component={TapsScreen} />
+        <Stack.Screen name="AddReading" component={AddReadingScreen} />
+        <Stack.Screen name="Login" component={LoginScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     )
@@ -26,9 +28,9 @@ export default function App() {
     return (
       <NavigationContainer>
         <Stack.Navigator headerMode="none">
-          <Stack.Screen name="Login" component={LoginScreen} />
-          <Stack.Screen name="TapsScreen" component={TapsScreen} />
-          <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
+        <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="TapsScreen" component={TapsScreen} />
+        <Stack.Screen name="Register" component={RegisterScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     )
