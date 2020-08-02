@@ -17,10 +17,9 @@ function ActivateButton({navigation}){
   const[showInput, setShowInput] = useState(false);
 
   const logOut = () => {
-    context.token2 = false;
-    /*Firebase.auth().signOut()
-    .then(() => navigation.navigate('Login'))
-    .catch((error => alert(error)));*/
+    Firebase.auth().signOut()
+    .then(() => navigation.popToTop())
+    .catch((error => alert(error)));
   };
 
   useEffect(() => {
