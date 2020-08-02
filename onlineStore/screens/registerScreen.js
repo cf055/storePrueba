@@ -29,6 +29,10 @@ export default function RegisterScreen({ navigation }) {
           photo: "route/fileName"
         }).then(() =>  navigation.navigate('TapsScreen'))
         .catch((error => alert(error)));
+        //Data user
+        db.collection("userData").doc(user.uid).get()
+        .then((h) =>  console.log(h.data()))
+        .catch((error => alert(error)));
       } else {
         //verificar este if 
         console.log("error");

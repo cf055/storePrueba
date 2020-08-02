@@ -41,7 +41,7 @@ function ActivateButton({navigation}){
           <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
             <Image style={{borderRadius:150, width:100, height:100, marginHorizontal: 20}} source={require('../assets/images/Logo.png')} />
             <View style={{flexDirection: 'column', justifyContent: 'center'}}>
-              <Text style={{marginHorizontal: 20, color: "white"}}>NombreUsuario</Text>
+              <Text style={{marginHorizontal: 20, color: "white"}}>{context.user.name}</Text>
             </View>
             <View style={{flexDirection: 'column', justifyContent: 'center',  marginHorizontal: 20}}>
             <AntDesign onPress={() => setShowInput(true)} name="edit" size={30} color="white" />
@@ -53,7 +53,7 @@ function ActivateButton({navigation}){
             <Text style={{marginHorizontal: 20, padding: 10}}>Datos usuario</Text>
           <View style={{alignItems: 'stretch'}}>
             <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Numero de cedula</Text>
-            <TextInput editable={showInput} style={[Layout.inputWithoutBorder,{borderBottomColor: showInput ? 'blue':'red'}]}/>
+            <TextInput value={context.user.cedula} editable={showInput} style={[Layout.inputWithoutBorder,{borderBottomColor: showInput ? 'blue':'red'}]}/>
             <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Numero MAC</Text>
             <TextInput editable={showInput} style={[Layout.inputWithoutBorder,{borderBottomColor: showInput ? 'blue':'red'}]} />
             <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Ejemplo</Text>
