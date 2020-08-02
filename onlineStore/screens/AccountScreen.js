@@ -62,8 +62,11 @@ function ActivateButton({navigation}){
         </ScrollView>
         </View>
         <View style={{flex:1,justifyContent: 'center', alignItems: 'center', backgroundColor: 'white' }}>
-          <TouchableOpacity  onPress={() => setShowInput(false)} style={Layout.buttonDesing}>
+          {showInput && <TouchableOpacity  onPress={() => setShowInput(false)} style={Layout.buttonDesing}>
             <Text style={Layout.textButtonDesing} >Guardar</Text>
+          </TouchableOpacity> }
+          <TouchableOpacity  onPress={logOut} style={Layout.buttonDesing}>
+            <Text style={Layout.textButtonDesing} >Cerrar</Text>
           </TouchableOpacity>
         </View>
       </View>
