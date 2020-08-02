@@ -1,7 +1,8 @@
 import React, { Component, useState, useEffect } from 'react'
 import { View, Text, TextInput, Image, SafeAreaView , TouchableOpacity  } from 'react-native';
 import Layout from '../constants/Layout';
-import { Firebase } from '../database/configFirebase'
+import { Firebase, db } from '../database/configFirebase'
+import * as context from '../database/Context'
 import { Entypo } from '@expo/vector-icons';
 
 export default function RegisterScreen({ navigation }) {
@@ -18,11 +19,28 @@ export default function RegisterScreen({ navigation }) {
     })();
   }, []);
 
-  const confirmPassword = () => {
+  const createUserData = () => {
+    Firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        context.idUser = user.uid;
+        db.collection("userData").doc(user.uid).set({
+          name: "cristian",
+          cedula: "234567",
+          photo: "route/fileName"
+        }).then(() =>  navigation.navigate('TapsScreen'))
+        .catch((error => alert(error)));
+      } else {
+        //verificar este if 
+        console.log("error");
+      }
+    });
+  }
+
+  const register = () => {
     if (password == password2) {
       Firebase.auth()
       .createUserWithEmailAndPassword(email, password)
-      .then(() => navigation.navigate('Login'))
+      .then(() => createUserData() )
       .catch((error => alert(error))); 
     }
     else {
@@ -38,7 +56,7 @@ export default function RegisterScreen({ navigation }) {
       <TextInput value={email} onChangeText={text => setEmail(text)} style={Layout.inputBorderDesing} placeholder={'Email'} />
       <TextInput secureTextEntry={true} value={password} onChangeText={text => setPassword(text)} style={Layout.inputBorderDesing} placeholder={'Contraseña'} />
       <TextInput secureTextEntry={true} value={password2} onChangeText={text => setPassword2(text)} style={Layout.inputBorderDesing} placeholder={'Confirmar contraseña'} />
-      <TouchableOpacity  onPress={confirmPassword}  style={Layout.buttonDesing}>
+      <TouchableOpacity  onPress={register}  style={Layout.buttonDesing}>
         <Text style={Layout.textButtonDesing} >Registrarse</Text>
       </TouchableOpacity>
     </View>
