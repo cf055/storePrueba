@@ -51,9 +51,6 @@ function ActivateButton({navigation}){
         <View style={{flex:3, alignItems: 'stretch', backgroundColor: 'white' }}>
           <ScrollView style={styles.scrollView}>
             <Text style={{marginHorizontal: 20, padding: 10}}>Datos usuario</Text>
-            <TouchableOpacity  onPress={logOut} style={Layout.buttonDesing}>
-              <Text style={Layout.textButtonDesing} >Cerrar</Text>
-            </TouchableOpacity>
           <View style={{alignItems: 'stretch'}}>
             <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Numero de cedula</Text>
             <TextInput editable={showInput} style={[Layout.inputWithoutBorder,{borderBottomColor: showInput ? 'blue':'red'}]}/>
@@ -81,7 +78,7 @@ const styles = StyleSheet.create({
     
   },
   container2: {
-    flex: 1.1, 
+    flex: 1.5, 
     flexDirection: 'column', 
     justifyContent: 'center', 
     backgroundColor: "#5fb1fa"
