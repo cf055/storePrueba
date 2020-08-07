@@ -10,6 +10,19 @@ export default function RegisterScreen({ navigation }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [password2, setPassword2] = useState('');
+  const [iconShow, setIconShow] = useState('eye');
+  const [showPassword, setShowPassword] = useState(true);
+
+  const changeIcon = () => {
+    if (iconShow == 'eye') {
+      setIconShow('eye-with-line');
+      setShowPassword(false);
+    }
+    if (iconShow == 'eye-with-line') {
+      setIconShow('eye');
+      setShowPassword(true);
+    }
+  };
 
   useEffect(() => {
     (async () => {
@@ -58,8 +71,14 @@ export default function RegisterScreen({ navigation }) {
       <Image style={{marginTop:10, borderRadius:200, width:160, height:160}} source={require('../assets/images/Logo.png')} />
       <Text style={{fontSize: 25, textAlign: 'center', fontWeight: "bold",}}>Registro app</Text>
       <TextInput value={email} onChangeText={text => setEmail(text)} style={Layout.inputBorderDesing} placeholder={'Email'} />
-      <TextInput secureTextEntry={true} value={password} onChangeText={text => setPassword(text)} style={Layout.inputBorderDesing} placeholder={'Contraseña'} />
-      <TextInput secureTextEntry={true} value={password2} onChangeText={text => setPassword2(text)} style={Layout.inputBorderDesing} placeholder={'Confirmar contraseña'} />
+      <View style={{flexDirection:"row"}}>
+      <TextInput secureTextEntry={showPassword} value={password} onChangeText={text => setPassword(text)} style={Layout.inputBorderDesing} placeholder={'Contraseña'} />
+        <Entypo name={iconShow} style={Layout.iconsDesingLogin2} size={24} onPress={changeIcon} />
+      </View>
+      <View style={{flexDirection:"row"}}>
+        <TextInput secureTextEntry={showPassword} value={password2} onChangeText={text => setPassword2(text)} style={Layout.inputBorderDesing} placeholder={'Confirmar contraseña'} />
+        <Entypo name={iconShow} style={Layout.iconsDesingLogin2} size={24} onPress={changeIcon} />
+      </View>
       <TouchableOpacity  onPress={register}  style={Layout.buttonDesing}>
         <Text style={Layout.textButtonDesing} >Registrarse</Text>
       </TouchableOpacity>

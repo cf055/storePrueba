@@ -2,10 +2,10 @@ import React, { Component, useState, useEffect } from 'react'
 import { View, Text, TextInput, Image, TouchableOpacity, SafeAreaView, Alert} from 'react-native';
 import Layout from '../constants/Layout'
 import { MaterialCommunityIcons, Zocial } from '@expo/vector-icons';
-import * as context from '../database/Context'
-import { useSafeArea } from 'react-native-safe-area-context';
-import { Firebase, db } from '../database/configFirebase';
+import * as context from '../database/Context';
 import { Entypo } from '@expo/vector-icons';
+import { Firebase, db } from '../database/configFirebase';
+import { useSafeArea } from 'react-native-safe-area-context';
 
 export default function LoginScreen({ navigation }) {
 
@@ -35,40 +35,41 @@ export default function LoginScreen({ navigation }) {
   
   return(
     //<ContextId.Provider value="blue">
-    <SafeAreaView style={{paddingTop: insets.top, paddingBottom: insets.bottom, flex: 1}}>
+    <SafeAreaView style={Layout.safeArea}>
       <View style={Layout.containerDesing}>
-      <Image style={{marginTop:50, borderRadius:200, width:160, height:160}} source={require('../assets/images/Logo.png')} />
-        
-        <View style={{marginTop: 40}}>
-          <Text style={{fontWeight: "bold"}} >CORREO</Text>
-          
+        <Image style={{marginTop:10, borderRadius:200, width:160, height:160}} source={require('../assets/images/Logo.png')} />
+        <Text style={{fontSize: 25, textAlign: 'center', fontWeight: "bold",}}>Login app</Text>
+
+        <View style={{marginTop: 15}}>
+
+          <View style={{flexDirection:"row"}}>
+            <Text style={{fontWeight: "bold"}} >CORREO</Text>
+          </View>
           <View style={{flexDirection:"row"}}>
             <Zocial style={Layout.iconsDesingLogin} name="email" size={20} />
             <TextInput value={username} onChangeText={text => setUserName(text)} style={Layout.inputBorderDesing} placeholder={'Correo'} />
           </View>
 
-          <Text style={{fontWeight: "bold",}} >CONTRASEÑA</Text>
-
+          <View style={{flexDirection:"row"}}>
+            <Text style={{fontWeight: "bold",}} >CONTRASEÑA</Text>
+          </View>
           <View style={{flexDirection:"row"}}>
             <MaterialCommunityIcons style={Layout.iconsDesingLogin} name="textbox-password" size={20} />
             <TextInput secureTextEntry={showPassword} value={password} onChangeText={text => setPassword(text)} style={Layout.inputBorderDesing} placeholder={'Contraseña'} />
-            <Entypo name={iconShow} style={Layout.iconsDesingLogin} size={24} onPress={changeIcon} />
+            <Entypo name={iconShow} style={Layout.iconsDesingLogin2} size={24} onPress={changeIcon} />
           </View>
-
         </View>
-      
-        <View style={{marginTop: 40}}>
+
+        <View style={{marginTop: 5}}>
           <TouchableOpacity 
             onPress={() => singIn(navigation, Firebase, username, password)}
             style={Layout.buttonDesing}>
-            
             <Text style={Layout.textButtonDesing}>Ingresar</Text>
           </TouchableOpacity>
 
           <TouchableOpacity 
             onPress={() => navigation.navigate('Register')}
             style={Layout.buttonDesing}>
-            
             <Text style={Layout.textButtonDesing}>Registrarse</Text>
           </TouchableOpacity>
         </View>

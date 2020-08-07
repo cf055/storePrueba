@@ -32,7 +32,12 @@ export default {
     width: 250
   },
   iconsDesingLogin:{
-    marginTop: 15,
+    marginTop: 25,
+  },
+  iconsDesingLogin2: {
+    marginTop: 25, 
+    position: 'absolute',
+    right: 30
   },
   safeArea: {
     flex: 1,

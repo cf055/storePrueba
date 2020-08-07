@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, ScrollView, Image, SafeAreaView, TextInput, Tou
 import Layout from '../constants/Layout';
 import { AntDesign } from '@expo/vector-icons'; 
 import { Firebase } from '../database/configFirebase';
-import * as context from '../database/Context'
+import * as context from '../database/Context';
 
 export default function AccountScreen ({ navigation }) {
   
@@ -56,7 +56,7 @@ function ActivateButton({navigation}){
             <TextInput value={context.user.cedula} editable={showInput} style={[Layout.inputWithoutBorder,{borderBottomColor: showInput ? 'blue':'red'}]}/>
             <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Numero MAC</Text>
             <TextInput editable={showInput} style={[Layout.inputWithoutBorder,{borderBottomColor: showInput ? 'blue':'red'}]} />
-            <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Ejemplo</Text>
+            <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Email</Text>
             <TextInput editable={showInput} style={[Layout.inputWithoutBorder,{borderBottomColor: showInput ? 'blue':'red'}]} />
           </View>
         </ScrollView>
