@@ -10,11 +10,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 const Stack = createStackNavigator();
 
 export default function App() {
-  const userToken = context.token;
-  var isSignedIn = false;
-  console.log(userToken);
+  const userToken = context.idUser;
 
-  if (context.token2 == true) {
+  if (userToken != null && userToken.length != 0) {
     return (  
       <NavigationContainer>
         <Stack.Navigator headerMode="none">

@@ -84,16 +84,13 @@ function singIn(navigation, Firebase, username, password){
     Firebase.auth()
       .signInWithEmailAndPassword(username, password)
       .then(() => {
-        console.log('hjk');
         var user = Firebase.auth().currentUser;
           //console.log(user);
           if (user != null) {
             context.idUser = user.uid;
-            //console.log(user.uid);
             db.collection("userData").doc(user.uid).get()
           .then((h) => {
             context.user = h.data();
-            console.log(context.user);
           })
           .catch((error => alert(error)));
           navigation.navigate('TapsScreen')
@@ -103,19 +100,5 @@ function singIn(navigation, Firebase, username, password){
           }  
       })
       .catch((error => alert(error)));
-  }, 1000);
-      //User id.
-      /*Firebase.auth().onAuthStateChanged(function(user) {
-
-        if (user) {
-          context.idUser = user.uid;
-          //console.log(user.uid);
-          db.collection("userData").doc(user.uid).get()
-        .then((h) => console.log(h.data()))
-        .catch((error => alert(error)));
-        } else {
-          //verificar este if 
-          console.log("error");
-        }
-      });*/   
+  }, 1000); 
 }

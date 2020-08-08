@@ -3,10 +3,10 @@
 const ContextId = React.createContext(null);
  
 export default ContextId;*/
-export var token = '';
+export var IdUser = '';
 export var token2 = false;
 
-export var user = {
+export var User = {
     cedula: '',
     name: '',
     photo: ''
