@@ -33,9 +33,9 @@ function ActivateButton({navigation}){
     <SafeAreaView style={Layout.safeArea}>
       <View style={{flex:1}}>
         <View style={styles.container2}>
-        <View style={{flex: 0.5}}>
+        <View style={{flex: 0.3}}>
           <View style={{flexDirection: 'row', justifyContent: 'center'}}>
-          <Text style={{color: "white", fontSize: 20}}>Settings.</Text>
+          <Text style={{color: "white", fontSize: 25}}>Configuración</Text>
           </View>
         </View>
           <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>

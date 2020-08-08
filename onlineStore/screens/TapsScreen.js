@@ -19,7 +19,7 @@ export default function TapsScreen () {
         name="Home" 
         component={HomeScreen} 
         options={{
-          tabBarLabel: 'Home',
+          tabBarLabel: 'Inicio',
           tabBarIcon: ({ color, size, focused }) => (
             <TabBarIcon focused={focused} color={color} size={size} name="ios-folder" />
             ),
@@ -29,7 +29,7 @@ export default function TapsScreen () {
           name="Account" 
           component={AccountScreen} 
           options={{
-            tabBarLabel: 'Account',
+            tabBarLabel: 'Cuenta',
             tabBarIcon: ({ color, size, focused }) => (
               <TabBarIcon focused={focused} color={color} size={size} name="ios-contact" />
             ),
