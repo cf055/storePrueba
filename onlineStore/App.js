@@ -3,16 +3,15 @@ import LoginScreen from './screens/LoginScreen';
 import RegisterScreen from './screens/RegisterScreen';
 import TapsScreen from './screens/TapsScreen';
 import AddReadingScreen from './screens/AddReadingScreen';
-import * as context from './database/Context';
+import { IdUser } from './database/Context';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 const Stack = createStackNavigator();
 
 export default function App() {
-  const userToken = context.idUser;
 
-  if (userToken != null && userToken.length != 0) {
+  if (IdUser != null && IdUser.length != 0) {
     return (  
       <NavigationContainer>
         <Stack.Navigator headerMode="none">
