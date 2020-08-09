@@ -6,6 +6,7 @@ import AddReadingScreen from './screens/AddReadingScreen';
 import * as context from './database/Context';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { GetStoreData } from './database/LocalStorage';
 
 const Stack = createStackNavigator();
 
