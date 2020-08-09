@@ -1,11 +1,12 @@
-import React, { Component, useState, useEffect } from 'react'
-import { View, Text, TextInput, Image, TouchableOpacity, SafeAreaView, Alert} from 'react-native';
+import React, { useState, useEffect } from 'react'
+import { View, Text, TextInput, Image, TouchableOpacity, SafeAreaView} from 'react-native';
 import Layout from '../constants/Layout'
 import { MaterialCommunityIcons, Zocial } from '@expo/vector-icons';
 import * as context from '../database/Context';
 import { Entypo } from '@expo/vector-icons';
 import { Firebase, db } from '../database/configFirebase';
 import { useSafeArea } from 'react-native-safe-area-context';
+import { StoreData  } from '../database/LocalStorage';
 
 export default function LoginScreen({ navigation }) {
 
@@ -27,7 +28,6 @@ export default function LoginScreen({ navigation }) {
   };
 
   useEffect(() => {
-    
       setUserName('');
       setPassword('');
     
@@ -38,7 +38,7 @@ export default function LoginScreen({ navigation }) {
     <SafeAreaView style={Layout.safeArea}>
       <View style={Layout.containerDesing}>
         <Image style={{marginTop:10, borderRadius:200, width:160, height:160}} source={require('../assets/images/Logo.png')} />
-        <Text style={{fontSize: 25, textAlign: 'center', fontWeight: "bold",}}>Login app</Text>
+        <Text style={{fontSize: 25, textAlign: 'center', fontWeight: "bold",}}>Logghjin app</Text>
 
         <View style={{marginTop: 15}}>
 
@@ -91,6 +91,11 @@ function singIn(navigation, Firebase, username, password){
             db.collection("userData").doc(user.uid).get()
           .then((h) => {
             context.User = h.data();
+            const UserDataJson = {
+              'id': context.IdUser,
+              'user': context.User
+            }
+            StoreData(UserDataJson);
           })
           .catch((error => alert(error)));
           navigation.navigate('TapsScreen')

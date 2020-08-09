@@ -6,20 +6,19 @@ import AddReadingScreen from './screens/AddReadingScreen';
 import * as context from './database/Context';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { GetStoreData } from './database/LocalStorage';
 
 const Stack = createStackNavigator();
 
 export default function App() {
-
-var IdUser = context.IdUser;
-console.log(IdUser);
+  const IdUser = context.IdUser;
   if (IdUser != null && IdUser.length != 0) {
-    return (  
+    return (
       <NavigationContainer>
         <Stack.Navigator headerMode="none">
-        <Stack.Screen name="TapsScreen" component={TapsScreen} />
-        <Stack.Screen name="AddReading" component={AddReadingScreen} />
-        <Stack.Screen name="Login" component={LoginScreen} />
+          <Stack.Screen name="TapsScreen" component={TapsScreen} />
+          <Stack.Screen name="AddReading" component={AddReadingScreen} />
+          <Stack.Screen name="Login" component={LoginScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     )
@@ -27,11 +26,10 @@ console.log(IdUser);
     return (
       <NavigationContainer>
         <Stack.Navigator headerMode="none">
-        <Stack.Screen name="Login" component={LoginScreen} />
-        <Stack.Screen name="TapsScreen" component={TapsScreen} />
-        <Stack.Screen name="AddReading" component={AddReadingScreen} />
-        <Stack.Screen name="Register" component={RegisterScreen} />
-        
+          <Stack.Screen name="Login" component={LoginScreen} />
+          <Stack.Screen name="TapsScreen" component={TapsScreen} />
+          <Stack.Screen name="AddReading" component={AddReadingScreen} />
+          <Stack.Screen name="Register" component={RegisterScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     )
