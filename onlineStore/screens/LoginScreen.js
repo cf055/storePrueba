@@ -38,7 +38,7 @@ export default function LoginScreen({ navigation }) {
     <SafeAreaView style={Layout.safeArea}>
       <View style={Layout.containerDesing}>
         <Image style={{marginTop:10, borderRadius:200, width:160, height:160}} source={require('../assets/images/Logo.png')} />
-        <Text style={{fontSize: 25, textAlign: 'center', fontWeight: "bold",}}>Logghjin app</Text>
+        <Text style={{fontSize: 25, textAlign: 'center', fontWeight: "bold",}}>Login app</Text>
 
         <View style={{marginTop: 15}}>
 
@@ -92,8 +92,8 @@ function singIn(navigation, Firebase, username, password){
           .then((h) => {
             context.User = h.data();
             const UserDataJson = {
-              'id': context.IdUser,
-              'user': context.User
+              id: context.IdUser,
+              user: context.User
             }
             StoreData(UserDataJson);
           })
