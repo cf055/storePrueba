@@ -87,10 +87,10 @@ function singIn(navigation, Firebase, username, password){
         var user = Firebase.auth().currentUser;
           //console.log(user);
           if (user != null) {
-            context.idUser = user.uid;
+            context.IdUser = user.uid;
             db.collection("userData").doc(user.uid).get()
           .then((h) => {
-            context.user = h.data();
+            context.User = h.data();
           })
           .catch((error => alert(error)));
           navigation.navigate('TapsScreen')

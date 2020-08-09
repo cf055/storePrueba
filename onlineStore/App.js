@@ -10,16 +10,14 @@ import { createStackNavigator } from '@react-navigation/stack';
 const Stack = createStackNavigator();
 
 export default function App() {
-  const userToken = context.idUser;
-  console.log(userToken);
-
-  if (userToken != null && userToken.length != 0) {
-    return (  
+  const IdUser = context.IdUser;
+  if (IdUser != null && IdUser.length != 0) {
+    return (
       <NavigationContainer>
         <Stack.Navigator headerMode="none">
-        <Stack.Screen name="TapsScreen" component={TapsScreen} />
-        <Stack.Screen name="AddReading" component={AddReadingScreen} />
-        <Stack.Screen name="Login" component={LoginScreen} />
+          <Stack.Screen name="TapsScreen" component={TapsScreen} />
+          <Stack.Screen name="AddReading" component={AddReadingScreen} />
+          <Stack.Screen name="Login" component={LoginScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     )
@@ -27,11 +25,10 @@ export default function App() {
     return (
       <NavigationContainer>
         <Stack.Navigator headerMode="none">
-        <Stack.Screen name="Login" component={LoginScreen} />
-        <Stack.Screen name="TapsScreen" component={TapsScreen} />
-        <Stack.Screen name="AddReading" component={AddReadingScreen} />
-        <Stack.Screen name="Register" component={RegisterScreen} />
-        
+          <Stack.Screen name="Login" component={LoginScreen} />
+          <Stack.Screen name="TapsScreen" component={TapsScreen} />
+          <Stack.Screen name="AddReading" component={AddReadingScreen} />
+          <Stack.Screen name="Register" component={RegisterScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     )
