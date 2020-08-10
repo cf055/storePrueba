@@ -1,4 +1,5 @@
 import AsyncStorage from '@react-native-community/async-storage';
+import * as context from '../database/Context';
 
 const StoreData = async (value) => {
     try {
@@ -9,11 +10,17 @@ const StoreData = async (value) => {
     }
 }
 
+
 const GetStoreData = async () => {
     try {
-        const jsonValue = await AsyncStorage.getItem('@userData')
-        console.log(jsonValue);
-        return jsonValue != null ? JSON.parse(jsonValue) : null;
+        const getData = await AsyncStorage.getItem('@userData');
+        const dataJson = JSON.parse(getData);
+        const idUser2 = dataJson['id'];
+        //console.log(idUser2);
+        return idUser2;
+        //context.IdUserEjemplo = dataJson['id'];
+        //console.log(idUser2);
+        
     } catch (e) {
         alert(e);
     }

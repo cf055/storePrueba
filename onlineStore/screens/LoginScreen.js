@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import { View, Text, TextInput, Image, TouchableOpacity, SafeAreaView} from 'react-native';
+import React, { Component, useState, useEffect } from 'react'
+import { View, Text, TextInput, Image, TouchableOpacity, SafeAreaView, Alert} from 'react-native';
 import Layout from '../constants/Layout'
 import { MaterialCommunityIcons, Zocial } from '@expo/vector-icons';
 import * as context from '../database/Context';
@@ -28,6 +28,7 @@ export default function LoginScreen({ navigation }) {
   };
 
   useEffect(() => {
+    
       setUserName('');
       setPassword('');
     

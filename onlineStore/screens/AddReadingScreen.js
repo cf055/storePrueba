@@ -45,6 +45,7 @@ export default function AddReadingScreen ( {navigation} ) {
         <View style={{flex:3, backgroundColor:'white'}}>
           <ScrollView>
             <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Id Medidor</Text>
+            <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>{context.IdUser}</Text>
             <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Fecha - Hora</Text>
             <Text style={{marginHorizontal: 30}}>{time}</Text>
             <Text style={{marginHorizontal: 30, color: "#a2a5a4", margin: 10}}>Localizacion</Text>

@@ -4,6 +4,7 @@ import Layout from '../constants/Layout';
 import { AntDesign } from '@expo/vector-icons';
 import { Firebase } from '../database/configFirebase';
 import * as context from '../database/Context';
+import { GetStoreData } from '../database/LocalStorage';
 
 export default function AccountScreen({ navigation }) {
 
@@ -23,6 +24,7 @@ function ActivateButton({ navigation }) {
   };
 
   useEffect(() => {
+    GetStoreData();
     (async () => {
       setShowInput(false);
     })();
@@ -35,7 +37,7 @@ function ActivateButton({ navigation }) {
         <View style={styles.container2}>
           <View style={{ flex: 0.3 }}>
             <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
-              <Text style={{ color: "white", fontSize: 25 }}>Configuración</Text>
+              <Text style={{ color: "white", fontSize: 25 }}>{context.IdUserEjemplo}</Text>
             </View>
           </View>
           <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>

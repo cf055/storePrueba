@@ -4,6 +4,7 @@ const ContextId = React.createContext(null);
  
 export default ContextId;*/
 export var IdUser = '';
+export var IdUserEjemplo = '';
 export var token2 = false;
 
 export var User = {

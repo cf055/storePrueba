@@ -11,8 +11,10 @@ import { GetStoreData } from './database/LocalStorage';
 const Stack = createStackNavigator();
 
 export default function App() {
-  console.log(GetStoreData()[0]);
+  let ejemplo = GetStoreData();
   const IdUser = context.IdUser;
+  console.log(ejemplo);
+
   if (IdUser != null && IdUser.length != 0) {
     return (
       <NavigationContainer>
