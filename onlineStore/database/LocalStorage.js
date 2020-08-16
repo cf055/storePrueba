@@ -14,16 +14,39 @@ const StoreData = async (value) => {
 const GetStoreData = async () => {
     try {
         const getData = await AsyncStorage.getItem('@userData');
-        const dataJson = JSON.parse(getData);
-        const idUser2 = dataJson['id'];
-        //console.log(idUser2);
-        return idUser2;
-        //context.IdUserEjemplo = dataJson['id'];
-        //console.log(idUser2);
-        
+        let dataJson = JSON.parse(getData);
+        let idUser2 = dataJson['id'];
+        if(idUser2 == undefined){
+            return false;
+            
+        }
+        else{
+            return true;
+           
+        }
     } catch (e) {
         alert(e);
     }
 }
 
-export { StoreData, GetStoreData}
+function GetData() {
+    let ejemplo = false;
+    GetStoreData().then(
+        value => {
+            ejemplo = value;
+        }
+    );
+    console.log(ejemplo);
+}
+
+
+const DeleteData = async () => {
+    try {
+        AsyncStorage.removeItem('@userData');
+        console.log('data delete.');
+    } catch (e) {
+        alert(e);
+    }
+} 
+
+export { StoreData, GetData, DeleteData}

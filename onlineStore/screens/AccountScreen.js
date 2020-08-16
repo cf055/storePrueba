@@ -5,6 +5,7 @@ import { AntDesign } from '@expo/vector-icons';
 import { Firebase } from '../database/configFirebase';
 import * as context from '../database/Context';
 import { GetStoreData } from '../database/LocalStorage';
+import { DeleteData } from '../database/LocalStorage';
 
 export default function AccountScreen({ navigation }) {
 
@@ -19,7 +20,10 @@ function ActivateButton({ navigation }) {
 
   const logOut = () => {
     Firebase.auth().signOut()
-      .then(() => navigation.popToTop())
+      .then(() => {
+        DeleteData();
+        navigation.popToTop()
+      })
       .catch((error => alert(error)));
   };
 

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import LoginScreen from './screens/LoginScreen';
 import RegisterScreen from './screens/RegisterScreen';
 import TapsScreen from './screens/TapsScreen';
@@ -6,16 +6,15 @@ import AddReadingScreen from './screens/AddReadingScreen';
 import * as context from './database/Context';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { GetStoreData } from './database/LocalStorage';
+import { GetData } from './database/LocalStorage';
 
 const Stack = createStackNavigator();
 
 export default function App() {
-  let ejemplo = GetStoreData();
-  const IdUser = context.IdUser;
-  console.log(ejemplo);
-
-  if (IdUser != null && IdUser.length != 0) {
+  var prueba = false;
+  GetData();
+  //console.log(token);
+  if (prueba == true) {
     return (
       <NavigationContainer>
         <Stack.Navigator headerMode="none">
